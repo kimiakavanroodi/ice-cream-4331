@@ -1,12 +1,11 @@
 import React from 'react';
-import '../styles/App.css';
 
-function MainBody() {
+function OnBoard() {
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Edit <code>src/App.tsx</code> and save to reldsfsdf
+          Onboarding process
         </p>
         <a
           className="App-link"
@@ -21,4 +20,4 @@ function MainBody() {
   );
 }
 
-export default MainBody;
+export default OnBoard;
