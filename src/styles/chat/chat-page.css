@@ -1,0 +1,75 @@
+
+.chat-page-background {
+    background: #101214;
+    height: 100vh;
+}
+
+.chat-page-container {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.chat-page-centerpiece {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.chat-page-user-list-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 57px;
+    flex-grow: 1;
+}
+
+.chat-page-user-list {
+    width: 62px;
+    height: 85vh;
+    padding: 20px;
+
+    background: linear-gradient(179.44deg, rgba(98, 99, 108, 0.8) 3.79%, rgba(59, 60, 73, 0.8) 32.69%, rgba(56, 57, 67, 0.8) 58.47%, rgba(51, 52, 61, 0.8) 78.17%, rgba(66, 68, 84, 0.8) 90.03%);
+    box-shadow: 22px 36px 25px rgba(0, 0, 0, 0.88), 73px 33px 22px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 48px 92px 67px rgba(0, 0, 0, 0.25), 43px 48px 54px rgba(0, 0, 0, 0.53);
+    border-radius: 56px;
+}
+
+.chat-page-main-body {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
+    position: relative;
+    width: 815px;
+    height: 80vh;
+    
+    background: linear-gradient(109.88deg, rgba(26, 27, 29, 0.94) 8.67%, rgba(46, 50, 53, 0.94) 17.72%, rgba(53, 52, 57, 0.94) 30.71%, rgba(33, 32, 34, 0.94) 46.97%, rgba(37, 38, 39, 0.94) 67.76%, rgba(21, 23, 24, 0.94) 81.24%);
+    box-shadow: 59px 4px 16px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 48px 92px 67px rgba(0, 0, 0, 0.25), 43px 48px 54px rgba(0, 0, 0, 0.53), inset -4px 4px 3px rgba(0, 0, 0, 0.22);
+    border-radius: 56px;
+}
+
+.chat-page-top-banner {
+    display: flex;
+    flex-direction: row;
+    border-radius: 100px;
+
+    position: absolute!important;
+    top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    position: absolute;
+    width: 860px;
+    height: 84px;
+    left: -20px;
+
+
+    background: linear-gradient(90.83deg, rgba(135, 70, 217, 0.9) 8.85%, rgba(122, 111, 228, 0.9) 53.15%, rgba(110, 92, 218, 0.9) 73.15%, rgba(142, 123, 255, 0.9) 95.8%);
+    box-shadow: 7px 35px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+.chat-page-message-text {
+    
+}
