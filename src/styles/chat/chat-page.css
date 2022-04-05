@@ -15,14 +15,14 @@
 
 .chat-page-centerpiece {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
 }
 
 .chat-page-user-list-container {
     display: flex;
     flex-direction: column;
-    margin-right: 57px;
+    margin-right: 37px;
     flex-grow: 1;
 }
 
@@ -41,6 +41,8 @@
     flex-direction: column;
     max-width: 100%;
 
+    margin: 20px;
+
     position: relative;
     width: 815px;
     height: 80vh;
@@ -53,6 +55,7 @@
 .chat-page-top-banner {
     display: flex;
     flex-direction: row;
+    z-index: 9999;
     border-radius: 100px;
 
     position: absolute!important;
@@ -70,6 +73,70 @@
 
 }
 
+.chat-page-message-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .chat-page-message-text {
-    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    max-width: 100%;
+    position: absolute;
+    bottom: -40px;
+    width: 707px;
+    height: 63px;
+    background: rgba(83, 87, 96, 0.8);
+    box-shadow: 0px 48px 20px -16px rgba(0, 0, 0, 0.35), inset 0px 4px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.chat-page-input-box-padding {
+    margin: 5px;
+}
+
+.write-a-message-placeholder {
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    /* identical to box height, or 488% */
+
+    display: flex;
+    align-items: center;
+    background: none!important;
+    outline: none!important;
+    border: none!important;
+    text-align: center;
+    letter-spacing: -0.5px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+}
+
+.write-a-message-placeholder::placeholder {
+    text-align: center;
+    letter-spacing: -0.5px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.chat-page-messages-body {
+    max-height: 100%;
+    overflow-y: auto;
+
+}
+
+.chat-page-text {
+    height: 109px;
+    left: 0px;
+    position: relative;
+    bottom: 30px;
+    width: 344.36px;
+
+    background: linear-gradient(262.55deg, #474B54 29.54%, #535760 52.85%, #6C727D 114.12%);
+    box-shadow: -18px 64px 20px rgba(0, 0, 0, 0.37);
 }

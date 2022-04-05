@@ -30,11 +30,37 @@ export const ChatPage = ({...restProps} : any) => {
 
                         </div>
 
-                    
-                        <div>
+                        <div className="chat-page-messages-body">
+
+                        <div className="chat-page-text">
+                                <p> Unfortunately, I cannot change it from now. You could always schedule another session to change the outfits. </p>
+                            </div>
                             
+                        <div className="chat-page-text">
+                                <p> Unfortunately, I cannot change it from now. You could always schedule another session to change the outfits. </p>
+                            </div>
+
+                            <div className="chat-page-text">
+                                <p> Unfortunately, I cannot change it from now. You could always schedule another session to change the outfits. </p>
+                            </div>
 
 
+                        </div>
+
+                    
+                        <div className="chat-page-message-container">
+                            <div className="chat-page-message-text">
+                                <div>
+                                    Icon
+                                </div>
+
+                                <div className="chat-page-input-box-padding ">
+                                    <input className="write-a-message-placeholder" placeholder="Write a message..." />
+                                </div>
+                                
+
+
+                            </div>
                         </div>
 
 
