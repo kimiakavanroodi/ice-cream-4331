@@ -1,4 +1,5 @@
 .OnboardContainer{
+ padding: 80px;
  display: flex;
  flex-direction: row;
  justify-content: center;
@@ -6,9 +7,10 @@
 }
 
 .OnboardCard{
-    padding: 40px;
+padding: 10px;
 width: 575px;
 height: 545px;
+
 
 background: linear-gradient(9.5deg, rgba(18, 21, 25, 0.6) 78.08%, rgba(17, 21, 24, 0.6) 99.27%);
 border: 13px solid rgba(182, 194, 253, 0.73);
@@ -25,9 +27,200 @@ border-radius: 29px;
     justify-content: center;
     max-width: 100%;
     align-items: center;
+    padding-bottom: 30px;
 }
 
+.iconsContainer{
+    display: flex;
+    flex-direction: row;  
+    max-width: 100%;
+    padding-bottom: 60px;
+
+
+}
+
+.personContainer{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    max-width: 100%;
+    align-items: left;
+    padding-right: 4px;
+}
+
+.personContainerOpac{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    max-width: 100%;
+    align-items: left;
+    padding-right: 4px;
+    opacity: 0.5;
+}
+
+.AgeContainer{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+
+} 
+
+.Age{
+padding-right: 10px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+letter-spacing: -0.075em;
+
+color: #FFFFFF;
+}
+
+.AgeOpacity{
+    padding-right: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.075em;
+    
+    color: #FFFFFF;
+    opacity: 0.5;
+    }
+
+
+.RecOneContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+} 
+
+.RecOneContainerOpac {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+    opacity: 0.5;
+}
+
+.moneyContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+}
+
+.moneyContainerOpac{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+    opacity: 0.5;
+}
+
+.budget{
+padding-right: 5px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+letter-spacing: -0.075em;
+color: #FFFFFF;
+}
+
+.budgetOpacity{
+    padding-right: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.075em;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.foodContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.foodContainerOpac{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+    padding-left: 5px;
+    opacity: 0.5;
+}
+
+.maturity{
+    padding-left: 4px;
+    padding-right: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.075em;
+    color: #FFFFFF;
+}
+
+.maturityOpacity{
+    padding-left: 4px;
+    padding-right: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.075em;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+
+
+.style{
+    padding-left: 4px;
+    padding-right: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.075em;
+    color: #FFFFFF;
+    
+}
+
+.styleOpacity{
+    padding-left: 4px;
+    padding-right: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.075em;
+    color: #FFFFFF;
+    opacity: 0.5;    
+}
+
+
+
 .ButtonsContainer{
+    padding: 30px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -36,7 +229,7 @@ border-radius: 29px;
 }
 
 .NextStepBtn{
-
+    cursor: pointer;
 width: 156px;
 height: 49px;
 
@@ -55,7 +248,27 @@ color: #FFFFFF;
 
 }
 
+.finishBtn {
+cursor: pointer;
+width: 156px;
+height: 49px;
+
+background: #7A6DFF;
+border-radius: 7px;
+
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+letter-spacing: -0.075em;
+
+color: #FFFFFF;
+}
+
 .BackBtn{
+cursor: pointer;
 width: 128px;
 height: 49px;
 background: none;
@@ -74,4 +287,52 @@ line-height: 17px;
 letter-spacing: -0.075em;
 
 color: #FFFFFF;
+}
+
+.questionBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+
+}
+
+.dropdownBody{
+    padding-bottom: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+}
+
+.select {
+    padding: 10px;
+    color: white;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.questions{
+padding-bottom: 5px;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+letter-spacing: -0.075em;
+
+color: #FFFFFF;
+
+
+}
+
+.InnerBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+
+
 }
