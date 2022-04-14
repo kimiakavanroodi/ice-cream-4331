@@ -4,7 +4,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import MainBody from './pages/App';
 import OnBoard from './pages/Onboard';
 import { Login } from './pages/Login';
-import { ChatPage } from './pages/chat/Chat';
+import { ChatPage } from './pages/chat/pages/Chat';
 
 const App = ({...restProps}) => {
 

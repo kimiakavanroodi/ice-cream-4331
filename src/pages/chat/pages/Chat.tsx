@@ -1,26 +1,15 @@
 import React from "react";
-import "../../styles/chat/chat-page.css"
+import "../../../styles/chat/chat-page.css"
 
-import ClothingHanger from "../../assets/chat/clothing-hanger.svg";
-import CredCard from "../../assets/chat/credit-card.svg";
-import Calendar from "../../assets/chat/calendar-today.svg";
-import VideoChat from "../../assets/chat/video-cam.svg";
-import SampleUserIcon from "../../assets/chat/sample-user0-icon.svg";
-import File from "../../assets/chat/attatch-file.svg"
+import ClothingHanger from "../../../assets/chat/clothing-hanger.svg";
+import SampleUserIcon from "../../../assets/chat/sample-user0-icon.svg";
 
-import FloatingDiamond from "../../assets/chat/floating-diamond.svg"
-import PinkDiamond from "../../assets/chat/pink-diamond.svg"
-import Logo from '../../assets/chat/match-it-logo.svg'
-import SearchIcon from '../../assets/chat/search-icon.svg'
+import FloatingDiamond from "../../../assets/chat/floating-diamond.svg"
+import PinkDiamond from "../../../assets/chat/pink-diamond.svg"
+import Logo from '../../../assets/chat/match-it-logo.svg'
+import SearchIcon from '../../../assets/chat/search-icon.svg'
+import { CalendarPopover } from "../components/CalendarPopover";
 
-const ChatContainer = `
-    display: flex;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    flex-direction: row;
-    justify-content: center;
-    max-width: 100%;
-`
 
 export const ChatPage = ({...restProps} : any) => {
 
@@ -117,8 +106,8 @@ export const ChatPage = ({...restProps} : any) => {
 
                             <div className="chat-page-top-banner-right-container">
 
-                                <div className="chat-page-top-banner-right-container-icons"> 
-                                    <img src={Calendar} />
+                                <div className="chat-page-top-banner-right-container-icons">
+                                    <CalendarPopover /> 
                                 </div>
 
                                 <div className="chat-page-top-banner-right-container-icons"> 

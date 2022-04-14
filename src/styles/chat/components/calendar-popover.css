@@ -1,0 +1,157 @@
+
+
+.calendar-popover-container {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 1px 96px 40px -16px rgb(0 0 0 / 41%);
+    border-radius: 3px;
+    z-index: 99999999;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.calendar-container-links {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+    margin-top: 16px!important;
+    margin: 0;
+    color: #605F68;
+}
+
+.overlay-body {
+    position: absolute;
+    height: 100%;
+    z-index: 99;
+    width: 100%;
+    background: red;
+}
+
+.calendar-popover-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.calendar-popover-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+
+}
+
+.calendar-h1 {
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+    padding: 10px;
+    padding-top: 25px;
+    padding-left: 18px;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #454448;
+}
+
+.calendar-h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0;
+    line-height: 17px;
+    /* identical to box height */
+    
+    letter-spacing: -0.015em;
+    
+    color: #605F68;
+}
+
+.reset-btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    background-color: none;
+    background: none;
+    border: none;
+    outline: none;
+
+    letter-spacing: -0.02em;
+
+    color: #605F68;
+}
+
+.calendar-submit-btn {
+    background: #7A6DFF;
+    border-radius: 7px;
+    width: 98px;
+    font-style: normal;
+    outline: none!important;
+    border: none!important;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+    height: 41px;
+}
+
+.calendar-input {
+    background: linear-gradient(91.72deg, #FBFBFB 48.54%, rgba(251, 251, 251, 0) 92.42%, rgba(251, 251, 251, 0) 92.42%);
+    border: 0.6px solid #CBCCD2;
+    box-sizing: border-box;
+    box-shadow: 0px 12px 15px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+    width: 100%;
+    padding: 8px;
+    padding-left: 13px;
+    outline: none;
+    height: 35px;
+
+
+    color: rgba(93, 95, 99, 0.67);
+}
+
+.calendar-input::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: rgba(93, 95, 99, 0.67);
+}
+
+.calendar-primary-btn {
+    
+}
+
+.calendar-secondary-btn {
+    
+}
+
+
