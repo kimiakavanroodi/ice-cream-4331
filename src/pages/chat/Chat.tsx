@@ -13,6 +13,15 @@ import PinkDiamond from "../../assets/chat/pink-diamond.svg"
 import Logo from '../../assets/chat/match-it-logo.svg'
 import SearchIcon from '../../assets/chat/search-icon.svg'
 
+const ChatContainer = `
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+`
+
 export const ChatPage = ({...restProps} : any) => {
 
     return (
@@ -110,14 +119,6 @@ export const ChatPage = ({...restProps} : any) => {
 
                                 <div className="chat-page-top-banner-right-container-icons"> 
                                     <img src={Calendar} />
-                                </div>
-
-                                <div className="chat-page-top-banner-right-container-icons"> 
-                                    <img src={VideoChat} />
-                                </div>          
-                                
-                                <div className="chat-page-top-banner-right-container-icons"> 
-                                    <img src={CredCard} />
                                 </div>
 
                                 <div className="chat-page-top-banner-right-container-icons"> 
