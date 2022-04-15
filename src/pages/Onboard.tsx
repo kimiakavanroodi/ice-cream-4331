@@ -9,13 +9,29 @@ import foodLogo from '../assets/onboarding/food.svg';
 import styleLogo from '../assets/onboarding/Style.svg';
 import backgroundImg from '../assets/onboarding/backgroundimg.svg';
 
+interface key_values {
+  age: string;
+  money: string;
+  clothing: string;
+  style: string;
+}
+
 export const OnBoard = ({...restProps}) => { 
   const [count, setCount] = React.useState(0);
   const [data, setData] = React.useState({
-    name : "", age: "0"
+    age: "", money: "0", clothing: "", style: ""
   });
-  console.log(count, data);
-  //style={{ height: "100vh", background: "linear-gradient(140.42deg, #101214 11.23%, #131516 26.36%, #16161A 47.52%, #101214 66.88%, #1D1D23 84.53%)"}}
+
+  const onChangeDataHandler = (key: any, value: any) => {
+    const copiedObject = {...data};
+    const str = key as string;
+
+    copiedObject[str as keyof key_values] = value;
+    setData(copiedObject);
+  };
+
+  console.log(data)
+
   return ( 
   <div style={{ height: "100vh", backgroundImage: `url(${backgroundImg})` }}> 
     <div className="OnboardContainer"> 
@@ -207,29 +223,30 @@ export const OnBoard = ({...restProps}) => {
           {
 
           count ==0?
-          <div className="dropdownBody">
-          
-            <select className= "select">
-              <option value=" ">Select an age group</option>
-              <option value="less than 18"> less than 18</option>
-              <option value="18 to 34">18 to 34</option>
-              <option value="35 to 50">35 to 50</option>
-              <option value="51 to 69">51 to 69</option>
-              <option value="greater than 69"> greater than 69</option>
-            </select>
+            <div className="dropdownBody">
             
+              <select value={data['age']} onChange={(event) => onChangeDataHandler('age', event.target.value)} className= "select">
+                <option value="less than 18"> less than 18</option>
+                <option value="18 to 34">18 to 34</option>
+                <option value="35 to 50">35 to 50</option>
+                <option value="51 to 69">51 to 69</option>
+                <option value="greater than 69"> greater than 69</option>
+              </select>
+              
 
-          </div>
+            </div>
+
+            
+          
           :null
           }
 
-{
+            {
 
             count ==1?
             <div className="dropdownBody">
 
-              <select className= "select">
-                <option value=" ">Select a budget range</option>
+          <select value={data['money']} onChange={(event) => onChangeDataHandler('money', event.target.value)} className= "select">
                 <option value="$25 - $49"> $25 - $49</option>
                 <option value="$101 - $199">$101 - $199</option>
                 <option value="$200 - $299">$200 - $299</option>
@@ -249,8 +266,7 @@ export const OnBoard = ({...restProps}) => {
               count ==2?
               <div className="dropdownBody">
 
-                <select className= "select">
-                  <option value=" ">Select a type of clothing</option>
+          <select value={data['clothing']} onChange={(event) => onChangeDataHandler('clothing', event.target.value)} className= "select">
                   <option value="Casual/Everyday"> Casual/Everyday</option>
                   <option value="Work">Work</option>
                   <option value="Dressy">Dressy</option>
@@ -268,15 +284,14 @@ export const OnBoard = ({...restProps}) => {
             count ==3?
             <div className="dropdownBody">
 
-              <select className= "select">
-                <option value=" ">Select a fashion style</option>
-                <option value="less than 18"> Vintage</option>
-                <option value="18 to 34">Artsy</option>
-                <option value="35 to 50">Casual</option>
-                <option value="51 to 69">Chic</option>
-                <option value="greater than 69"> Trendy</option>
-                <option value="greater than 69"> Vibrant</option>
-                <option value="greater than 69"> Sporty</option>
+            <select value={data['style']} onChange={(event) => onChangeDataHandler('style', event.target.value)} className= "select">
+                <option value="Vintage"> Vintage</option>
+                <option value="Artsy">Artsy</option>
+                <option value="Casual">Casual</option>
+                <option value="Chic">Chic</option>
+                <option value="Trendy"> Trendy</option>
+                <option value="Vibrant"> Vibrant</option>
+                <option value="Sporty"> Sporty</option>
               </select>
               
 
