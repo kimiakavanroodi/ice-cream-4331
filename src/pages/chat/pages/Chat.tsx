@@ -9,12 +9,20 @@ import PinkDiamond from "../../../assets/chat/pink-diamond.svg"
 import Logo from '../../../assets/chat/match-it-logo.svg'
 import SearchIcon from '../../../assets/chat/search-icon.svg'
 import { CalendarPopover } from "../components/CalendarPopover";
+import { OutfitModal } from "../components/OutfitModal";
 
 
 export const ChatPage = ({...restProps} : any) => {
+    const [outfitModal, isOutfitModal] = React.useState(false)
 
     return (
         <div className="chat-page-background">
+
+                {
+                outfitModal ? 
+                    <OutfitModal setOpen={isOutfitModal} />
+                : null
+            }
 
             <div className="match-it-header">
 
@@ -51,6 +59,8 @@ export const ChatPage = ({...restProps} : any) => {
             </div>
 
             <br></br>
+
+
 
             <div className="chat-page--top-section"></div>
             <div className="chat-page--middle-section"></div>
@@ -110,7 +120,7 @@ export const ChatPage = ({...restProps} : any) => {
                                     <CalendarPopover /> 
                                 </div>
 
-                                <div className="chat-page-top-banner-right-container-icons"> 
+                                <div onClick={() => isOutfitModal(true)} className="chat-page-top-banner-right-container-icons"> 
                                     <img src={ClothingHanger} />
                                 </div>
 
@@ -174,15 +184,17 @@ export const ChatPage = ({...restProps} : any) => {
 
                     
                         <div className="chat-page-message-container">
-                            <div className="chat-page-message-text">
+                            <div style={{justifyContent: "space-between"}} className="chat-page-message-text">
 
                                 <div className="chat-page-input-box-padding ">
                                     <input className="write-a-message-placeholder" placeholder="Write a message..." />
                                 </div>
-                                
 
-
+                                <div style={{paddingRight: 20}}>
+                                    <button> Send </button>
+                                </div>
                             </div>
+                           
                         </div>
 
 
@@ -194,6 +206,8 @@ export const ChatPage = ({...restProps} : any) => {
 
 
             </div>
+
+         
 
 
         </div>

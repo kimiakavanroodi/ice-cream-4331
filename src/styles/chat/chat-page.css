@@ -497,3 +497,80 @@
     background: none!important;
     cursor: pointer;
 }
+
+.outfit-modal {
+
+    position:fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background: rgba(141, 141, 141, 0.3);
+    backdrop-filter: blur(50px);    
+    z-index: 99999;
+}
+
+
+.outfit-modal-container {
+    padding-top: 1rem;
+    position: relative;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.outfit-modal-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.outfit-modal-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.outfit-modal-nav-links {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+
+    letter-spacing: -0.5px;
+    
+    color: #FFFFFF;
+}
+
+.outfit-modal-exit-link  {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+    letter-spacing: -0.065em;
+
+    color: #FFFFFF;
+}
+
+.outfit-modal-h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    margin: 0;
+    line-height: 58px;
+    letter-spacing: -0.065em;
+
+    color: #FFFFFF;
+
+}
+
+.outfit-modal-hr {
+    background: rgba(255, 255, 255, 0.27);
+    border-width: 0.6px;
+    position: relative;
+    left: 0px;
+    margin-top: 20px;
+    opacity: 0.6;
+    margin-left: -10rem;
+    margin-right: -10rem;
+}
