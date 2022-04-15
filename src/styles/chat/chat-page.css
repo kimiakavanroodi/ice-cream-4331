@@ -1,4 +1,5 @@
 
+
 .chat-page-background {
     background: #101214;
     height: 100%;
@@ -290,17 +291,14 @@
     font-style: normal;
     font-weight: 700;
     font-size: 13px;
-
     z-index: 999;
+    margin-bottom: 0px;
     position: relative;
-
-    /* identical to box height, or 488% */
-
     display: flex;
     align-items: center;
     text-align: center;
+    padding: 10px;
     letter-spacing: -1px;
-
     color: #FFFFFF;
 }
 
@@ -499,6 +497,10 @@
 }
 
 .outfit-modal {
+    z-index: 99999!important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
 
     position:fixed;
     top:0;
@@ -514,8 +516,8 @@
 .outfit-modal-container {
     padding-top: 1rem;
     position: relative;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 13rem;
+    padding-right: 13rem;
 }
 
 .outfit-modal-row {
@@ -578,8 +580,8 @@
     left: 0px;
     margin-top: 20px;
     opacity: 0.4;
-    margin-left: -10rem;
-    margin-right: -10rem;
+    margin-left: -13rem;
+    margin-right: -13rem;
 }
 
 .outfit-modal-white-card {
@@ -597,16 +599,117 @@
     box-shadow: 0px 12px 15px -4px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
     height: 228px;
+    width: 235px;
 }
 
 
 .outfit-modal-number {
     font-style: normal;
     font-weight: 500;
-    padding: 20px;
+    padding-right: 20px;
     font-size: 38px;
     letter-spacing: -0.065em;
 
     color: #FFFFFF;
 
+}
+
+.outfit-piece-icon {
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.modal-backdrop {
+    z-index: 999999!important;
+}
+
+.modal {
+    z-index: 999999!important;
+}
+
+.outfit-modal-delete-icon {
+    margin: 0;
+    padding-right: 20px;
+    font-size: 24px;
+    color: white;
+    padding-top: 0px!important;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.finish-creating-outfit-btn {
+    width: 198px;
+    height: 50px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    border: none;
+    outline: none;
+
+    color: #FFFFFF;
+    background: #7A6DFF;
+    border-radius: 6px;
+}
+
+.outfit-modal-num-pieces {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 6px;
+    /* identical to box height, or 488% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.5px;
+
+    color: #FFFFFF;
+}
+
+
+.outfit-modal-submission-modal {
+    padding: 50px;
+}
+
+.outfit-modal-submission-modal-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: flex-end;
+}
+
+.outfit-modal-submission-cancel-button {
+    font-weight: 500;
+    font-size: 14px;
+    background: none!important;
+    outline: none!important;
+    border: none!important;
+    /* identical to box height */
+    margin-right: 15px;
+    letter-spacing: -0.02em;
+    
+    color: #605F68;
+}
+
+.outfit-modal-submission-btn {
+    width: 103px;
+    height: 45px;
+    border: none!important;
+    outline: none!important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+
+    background: #7A6DFF;
+    border-radius: 6px;
 }

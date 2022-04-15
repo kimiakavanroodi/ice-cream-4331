@@ -5,6 +5,7 @@ import MainBody from './pages/App';
 import { OnBoard } from './pages/Onboard';
 import { Login } from './pages/Login';
 import { ChatPage } from './pages/chat/pages/Chat';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = ({...restProps}) => {
 
