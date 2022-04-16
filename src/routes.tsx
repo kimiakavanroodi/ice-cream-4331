@@ -6,6 +6,7 @@ import { OnBoard } from './pages/Onboard';
 import { Login } from './pages/Login';
 import { ChatPage } from './pages/chat/pages/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Feed } from './pages/feed/pages/Feed';
 
 const App = ({...restProps}) => {
 
@@ -32,6 +33,12 @@ const App = ({...restProps}) => {
               path='/login'
               element={<Login />} 
             />
+
+          <Route 
+              path='/feed'
+              element={<Feed />} 
+            />
+
 
         </Routes>
       </BrowserRouter>

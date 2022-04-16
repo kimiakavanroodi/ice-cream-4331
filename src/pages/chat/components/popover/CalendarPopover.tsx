@@ -1,6 +1,6 @@
 import React from "react";
-import Calendar from "../../../assets/chat/calendar-today.svg";
-import '../../../styles/chat/components/calendar-popover.css'
+import Calendar from "../../../../assets/chat/calendar-today.svg";
+import '../../../../styles/chat/components/calendar-popover.css'
 
 interface calendar_schema {
     start_date: '';

@@ -7,7 +7,6 @@
 
 .chat-page-container {
     display: flex;
-    padding-top: 20px;
     padding-bottom: 50px;
     flex-direction: row;
     justify-content: center;
@@ -29,7 +28,7 @@
 }
 
 .chat-page-user-list {
-    width: 62px;
+    width: 92px;
     height: 85vh;
     padding: 20px;
 
@@ -390,8 +389,24 @@
     z-index: 99;
     position: absolute;
     height: 322px;
+    background-size: 400% 400%!important;
+	animation: gradient 10s ease infinite;
     background: linear-gradient(106.89deg, #E848C9 9.58%, rgba(122, 109, 255, 0.42) 88.27%);
 }
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 .chat-page--last-section {
     top:  800px;
@@ -834,4 +849,149 @@
     border-radius: 100%;
     color: black;
     font-size: 14px;
+}
+
+
+.profile-pic-url {
+    width: 56px;
+    border: 10px solid #ffffff2b;
+    border-radius: 100%;
+    margin-bottom: 20px;
+    content: border;
+    cursor: pointer;
+    box-sizing: content-box;
+}
+
+.feed-container {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 30px;
+    position: relative;
+    z-index: 99999;
+}
+
+.feed-page-background {
+    position: fixed;
+    width: 100%;
+    overflow-y: auto;
+    padding-bottom: 200px;
+    height: 100vh;
+    background: #101214;
+}
+
+.feed-stylist-profile {
+    position: absolute;
+    z-index: 9999;
+    right: 120px;
+    top: -10px;
+    padding: 18px;
+    width: 302px;
+    overflow-x: auto;
+    border-radius: 26px;
+    border-bottom-left-radius: 130px;
+    height: 458px;
+    box-sizing: border-box;
+    background: linear-gradient(157.99deg, #000000 79.93%, #000000 94.96%);
+    box-shadow: 48px 55px 67px rgba(0, 0, 0, 0.25), 33px 37px 38px rgba(0, 0, 0, 0.53);
+}
+
+.feed-stylist-profile-image {
+    width: 100%;
+    min-width: 300px;
+    min-height: 253px;
+    max-height: 303px;
+    margin-top: -20px;
+    margin-left: -17px;
+    margin-right: -17px;
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.feed-stylist-profile-description-container {
+    position: relative;
+    top: -40px;
+}
+
+
+.feed-stylist-profile-button-row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 20px;
+    right: 0px;
+}
+
+
+.feed-stylist-profile-clear-gradient {
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    clip-path: polygon(0 0, 100% 40%, 100% 0);
+    background: white;
+    opacity: 0.16;
+}
+
+
+.floating { 
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-top: -10px;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+.feed-container-backdrop-card {
+    background: linear-gradient(93.88deg, rgba(58, 60, 62, 0.581) 17%, rgba(38, 37, 39, 0.7) 62.67%, rgba(42, 43, 44, 0.7) 74.27%, rgba(50, 51, 54, 0.7) 81.77%);
+    box-shadow: 0px 30px 55px rgba(136, 169, 255, 0.13), 0px 105px 41px rgba(0, 0, 0, 0.37), 48px 55px 67px rgba(0, 0, 0, 0.25), 33px 37px 38px rgba(0, 0, 0, 0.53), inset 0px 0px 3px rgba(0, 0, 0, 0.22);
+    height: 100%;
+    border-radius: 30px;
+}
+
+.feed-stylist-profile-h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    margin: 0;
+    margin-top: 1px;
+    line-height: 25px;
+    letter-spacing: -0.075em;
+
+    color: #FFFFFF;
+}
+
+.feed-stylist-profile-h2 {
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 128.52%;
+    /* identical to box height, or 18px */
+
+    letter-spacing: 0.06em;
+
+    color: #FFFFFF;
+}
+
+.feed-stylist-profile-p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 128.52%;
+    /* or 18px */
+
+
+    color: #FFFFFF;
+
 }

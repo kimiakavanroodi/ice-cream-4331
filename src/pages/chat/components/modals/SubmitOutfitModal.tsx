@@ -7,11 +7,7 @@ export const SubmitOutfitModal = ({pieces}: any, {setPieces}: any) => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const submitOutfit = () => {
-        console.log(pieces);
-    };
-
+    
     return (
         <>
         <button className="finish-creating-outfit-btn" onClick={handleShow}>

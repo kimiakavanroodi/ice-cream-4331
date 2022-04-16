@@ -1,8 +1,8 @@
 import React from "react";
-import AddOutfitPiece from '../../../assets/chat/add-outfit-icon.svg'
-import { CardUploadModal } from "../../../components/card/CardUploadModal";
+import AddOutfitPiece from '../../../../assets/chat/add-outfit-icon.svg'
+// import { CardUploadModal } from "../../../../components/card/CardUploadModal";
 import { SubmitOutfitModal } from "./SubmitOutfitModal";
-import { UploadPortfolioModal } from '../../../components/portfolio/UploadPortfolioModal'
+import { UploadPortfolioModal } from '../../../../components/portfolio/UploadPortfolioModal'
 
 interface outfit_piece {
     name: "";
@@ -19,6 +19,12 @@ export const OutfitModal = ({setOpen} : any, {...restProps}) => {
         name: "", type: "", note: "", brand: "", cost: "", img_url: "", link: ""
     }])
     const [tab, setTab] = React.useState("create")
+
+    const resetPieces = () => {
+        createOutfit([{
+            name: "", type: "", note: "", brand: "", cost: "", img_url: "", link: ""
+        }])
+    }
 
     const addNewPiece = () => {
         const new_piece = [...new_outfits];
@@ -50,7 +56,7 @@ export const OutfitModal = ({setOpen} : any, {...restProps}) => {
                         <p className="outfit-modal-nav-links"> View All Outfits</p>
                     </div>
                     <div>
-                    <p className="outfit-modal-exit-link" onClick={() => setOpen(false)}> Exit</p>
+                    <p className="outfit-modal-exit-link" onClick={() => { setOpen(false); resetPieces() }}> Exit</p>
                     </div>
                 </div>
 

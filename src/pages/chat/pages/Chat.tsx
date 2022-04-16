@@ -3,13 +3,12 @@ import "../../../styles/chat/chat-page.css"
 
 import ClothingHanger from "../../../assets/chat/clothing-hanger.svg";
 import SampleUserIcon from "../../../assets/chat/sample-user0-icon.svg";
-
 import FloatingDiamond from "../../../assets/chat/floating-diamond.svg"
-import PinkDiamond from "../../../assets/chat/pink-diamond.svg"
-import Logo from '../../../assets/chat/match-it-logo.svg'
-import SearchIcon from '../../../assets/chat/search-icon.svg'
-import { CalendarPopover } from "../components/CalendarPopover";
-import { OutfitModal } from "../components/OutfitModal";
+
+import { CalendarPopover } from "../components/popover/CalendarPopover";
+import { OutfitModal } from "../components/modals/OutfitModal";
+import { MainHeader } from "../../../components/layout/header/MainHeader";
+import { BgLayout } from "../../../components/layout/BgLayout"
 
 
 export const ChatPage = ({...restProps} : any) => {
@@ -18,62 +17,16 @@ export const ChatPage = ({...restProps} : any) => {
     return (
         <div className="chat-page-background">
 
-                {
-                outfitModal ? 
+            {outfitModal ? 
                     <OutfitModal setOpen={isOutfitModal} />
                 : null
             }
 
-            <div className="match-it-header">
-
-                <div className="match-it-header--top-left-corner">
-                    <div className="match-it-header--logo">
-                        <img src={Logo} />
-                    </div>
-                    <div style={{position: "relative"}}>
-                        <div style={{position: "absolute", top: '15px', left: '15px'}}> <img src={SearchIcon} /> </div>
-                        <div>
-                            <input className="match-it-header--input" placeholder="Search for chats & anything you want." />
-                       </div>
-                    </div>
-
-                </div>
-
-                <div className="match-it-header--top-right-corner">
-                    <div className="match-it-header--top-right-corner-menu">
-                        <div className="match-it-header--top-right-corner-menu--item">
-                            
-                        </div>
-                        <div>
-                            asdas
-                        </div>
-                    </div>
-
-                    <div>
-                        Kimia K.
-                    </div>
-
-                    
-                </div>
-
-            </div>
-
-            <br></br>
-
-
-
-            <div className="chat-page--top-section"></div>
-            <div className="chat-page--middle-section"></div>
-            <div className="chat-page--last-section"></div>
-
-            <div className="chat-page-header-container">
-
-                <p className="chat-page-header--title"> All Chats <span style={{marginLeft: '13px', mixBlendMode: "color-dodge"}}> <img src={PinkDiamond} /> </span> </p>
-                <p className="chat-page-header--subtitle"> Let’s look at your chats. </p>
-
-
-            </div>
-
+            <MainHeader />
+            
+           <BgLayout title="All Chats" subtitle="Let's look at your chat." />
+           
+           <div style={{top: '276px', height: '500px'}} className="chat-page--middle-section"></div>
 
             <div className="chat-page-container">
                 
@@ -85,9 +38,18 @@ export const ChatPage = ({...restProps} : any) => {
 
                             <div className="chat-page-user-list--item "> <img style={{width: '35px', filter: "drop-shadow(18px 20px 13px rgba(0, 0, 0, 0.94))"}} src={FloatingDiamond} /> </div>
                            
-                            <div className="chat-page-user-list--item "> hey </div>
-                            
-                            <div className="chat-page-user-list--item "> hey </div>
+                           <div style={{overflowY: 'auto', height: '80vh'}}>
+                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+
+                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+
+                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+
+                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+
+                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+                            </div>
 
                         </div>
 
