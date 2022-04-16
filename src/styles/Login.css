@@ -1,3 +1,182 @@
-.LoginHeader{
-    color: blue;
+.LoginContainer {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 100px;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.login-background {
+    overflow-y: auto;
+    position: fixed;
+    padding-bottom: 200px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.LoginCard {
+    padding: 30px;
+    min-width: 300px;
+
+    background: linear-gradient(9.5deg, rgba(18, 21, 25, 0.95) 78.08%, rgba(17, 21, 24, 0) 99.27%);
+    border: 13px solid rgba(182, 194, 253, 0.73);
+    box-shadow: 0px 24px 22px -6px rgba(83, 255, 255, 0.2), 48px 68px 38px -18px rgba(0, 0, 0, 0.25), 0px 124px 36px -25px rgba(0, 0, 0, 0.25), inset 0px -29px 38px rgba(72, 203, 232, 0.2);
+    filter: drop-shadow(-11px 4px 17px rgba(83, 255, 255, 0.17)) drop-shadow(14px 4px 27px rgba(83, 255, 255, 0.19));
+    border-radius: 29px;
+}
+
+.LogoContainer {
+    padding: 50px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+}
+
+.Loginfirsttext{
+    justify-content: center;
+    font-style: normal;
+    padding-top: 0px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: -0.075em;
+
+    color: #FFFFFF;
+}
+
+.Loginsecondtext{
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 5px;
+    font-size: 17px;
+    line-height: 18px;
+    letter-spacing: -0.075em;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.email {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+
+}
+
+.emailInput {
+    padding-top: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 100%;
+    align-items: center;
+}
+
+.inputBox {
+    width: 100%;
+    height: 36px;
+    justify-content: center;
+    background: #E7EAEA;
+    border: 0.5px solid #EDF4FF;
+    box-sizing: border-box;
+    padding-left: 10px;
+    box-shadow: 0px 12px 7px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+
+.loginBtn {
+    cursor: pointer;
+    justify-content: center;
+    width: 276px;
+    height: 36px;
+    border: 0.5px;
+    background: #897EFE;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.075em;
+    color: #FFFFFF;
+}
+
+.btnContainer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+.noAccountContainer{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    flex-direction: row;
+}
+.noAccount {
+    font-style: normal;
+    padding-right:5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    letter-spacing: -0.02em;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.noAccountSign {
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+
+    letter-spacing: -0.02em;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sign-up-group-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.sign-up-group-column {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.signupbtnContainer {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+.signupBtn {
+    cursor: pointer;
+    width: 271px;
+    height: 42px;
+    border: 0.5px;
+    background: #897EFE;
+    border-radius: 3px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.075em;
+
+    color: #FFFFFF;
 }
