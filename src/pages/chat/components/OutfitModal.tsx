@@ -1,6 +1,8 @@
 import React from "react";
 import AddOutfitPiece from '../../../assets/chat/add-outfit-icon.svg'
+import { CardUploadModal } from "../../../components/card/CardUploadModal";
 import { SubmitOutfitModal } from "./SubmitOutfitModal";
+import { UploadPortfolioModal } from '../../../components/portfolio/UploadPortfolioModal'
 
 interface outfit_piece {
     name: "";
@@ -10,8 +12,6 @@ interface outfit_piece {
     cost: "";
     link: "";
 }
-
-export interface outfit_pieces extends Array<outfit_piece>{}
 
 
 export const OutfitModal = ({setOpen} : any, {...restProps}) => {
@@ -39,8 +39,6 @@ export const OutfitModal = ({setOpen} : any, {...restProps}) => {
         updated_piece[id][key as keyof outfit_piece] = value;
         createOutfit(updated_piece);
     };
-
-    console.log(new_outfits)
 
     return (
         <div className="outfit-modal">
@@ -145,10 +143,15 @@ export const OutfitModal = ({setOpen} : any, {...restProps}) => {
                     <img onClick={addNewPiece} className="outfit-piece-icon" src={AddOutfitPiece} />                  
                 </div>
 
+                <div>
+                    <UploadPortfolioModal />
+                </div>
                 <div className="outfit-modal-column" style={{justifyContent: "flex-end", alignItems: "flex-end"}}>
                     <SubmitOutfitModal pieces={new_outfits} setPieces={createOutfit} />
                     <p className="outfit-modal-num-pieces"> {new_outfits.length} total pieces </p>
                 </div>
+
+                
             </div>
         </div>
     )

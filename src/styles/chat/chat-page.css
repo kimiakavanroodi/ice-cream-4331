@@ -713,3 +713,125 @@
     background: #7A6DFF;
     border-radius: 6px;
 }
+
+.wallet-container-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.wallet-container-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.add-your-card-h1 {
+    font-size: 15px;
+     margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.grid-portfolio-upload {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.cancel-btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    color: #605F68;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.next-button {
+    width: 80px;
+    height: 41px;
+    font-style: normal;
+    font-weight: 600;
+    outline: none!important;
+    border: none!important;
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    color: #FFFFFF;
+    background: #7A6DFF;
+    border-radius: 7px;
+}
+
+.upload-portfolio-modal-btn-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.upload-portfolio-modal-add-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.upload-portfolio-modal-h1 {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    margin: 0;
+    
+    color: #454448;
+}
+
+.upload-portfolio-modal-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.upload-portfolio-modal-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+}
+
+.upload-portfolio-modal-delete {
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.upload-portfolio-modal-add-btn {
+    background: none;
+    border: 1px solid black;
+    padding: 5px;
+
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    color: black;
+    font-size: 14px;
+}
