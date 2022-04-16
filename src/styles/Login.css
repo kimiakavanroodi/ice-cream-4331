@@ -1,3 +1,99 @@
-.LoginHeader{
-    color: blue;
+.LoginContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.LoginCard {
+    width: 346px;
+    height: 413px;
+
+    background: linear-gradient(9.5deg, rgba(18, 21, 25, 0.95) 78.08%, rgba(17, 21, 24, 0) 99.27%);
+    border: 13px solid rgba(182, 194, 253, 0.73);
+    box-shadow: 0px 24px 22px -6px rgba(83, 255, 255, 0.2), 48px 68px 38px -18px rgba(0, 0, 0, 0.25), 0px 124px 36px -25px rgba(0, 0, 0, 0.25), inset 0px -29px 38px rgba(72, 203, 232, 0.2);
+    filter: drop-shadow(-11px 4px 17px rgba(83, 255, 255, 0.17)) drop-shadow(14px 4px 27px rgba(83, 255, 255, 0.19));
+    border-radius: 29px;
+}
+
+.LogoContainer {
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+}
+
+.Loginfirsttext{
+    font-style: normal;
+    padding-top: 30px;
+    padding-left: 25px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: -0.075em;
+
+    color: #FFFFFF;
+}
+
+.Loginsecondtext{
+    font-style: normal;
+    font-weight: 400;
+    padding-left: 25px;
+    padding-top: 5px;
+    font-size: 17px;
+    line-height: 18px;
+    letter-spacing: -0.075em;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.email {
+    font-style: normal;
+    padding-left: 25px;
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+
+}
+
+.emailInput {
+    padding-top: 5px;
+    padding-left: 25px;
+}
+
+.inputBox {
+    width: 276px;
+    height: 36px;
+  
+    background: #E7EAEA;
+    border: 0.5px solid #EDF4FF;
+    box-sizing: border-box;
+    justify-content: center;
+    box-shadow: 0px 12px 7px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+
+.loginBtn {
+    cursor: pointer;
+    width: 276px;
+    height: 42px;
+    border: 0.5px;
+    background: #897EFE;
+    border-radius: 3px;
+}
+
+.btnContainer {
+    padding: 20px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
 }
