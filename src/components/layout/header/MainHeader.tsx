@@ -31,8 +31,11 @@ export const MainHeader = ({userInfo}: any, {...restProps}) => {
                 </div>
             </div>
 
-            <div>
-                Kimia K.
+            <div className="header-vertical-gray-line"></div>
+
+            <div className="user-profile-header-row">
+                <img className="user-profile-header-icon" src="https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_400_400/0/1607291489330?e=1655337600&v=beta&t=57XnUhGnnr9TT_xBXeaS_Jxsy33vuxdAa9Z8JanjoJw" />
+                <p className="user-profile-header-name"> Kimia K. </p>
             </div>
 
             
