@@ -74,9 +74,9 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
 
     position: absolute;
-    width: 700px;
+    width: 650px;
     height: 84px;
-    left: -20px;
+    left: 20px;
 
 
     background: linear-gradient(90.83deg, rgba(135, 70, 217, 0.9) 8.85%, rgba(122, 111, 228, 0.9) 53.15%, rgba(110, 92, 218, 0.9) 73.15%, rgba(142, 123, 255, 0.9) 95.8%);
@@ -282,8 +282,8 @@
     background: linear-gradient(97.54deg, rgba(232, 72, 201, 0.8) -3.77%, rgba(122, 109, 255, 0.8) 119.5%);
     box-shadow: 0px 35px 20px -6px rgba(0, 0, 0, 0.36);
     border-radius: 58px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .chat-page-date--text {
@@ -354,7 +354,6 @@
 
 .chat-page-top-container-left-container-user-icon {
     filter: drop-shadow(0px 7px 5px rgba(0, 0, 0, 0.37));
-    
 }
 
 .chat-page-top-container-left-container-user-icon-bg {
@@ -364,9 +363,7 @@
     border-radius: 100%;
     box-shadow: inset 0px 4px 1px rgba(0, 0, 0, 0.15);
     background: linear-gradient(134.68deg, #EE9D54 4%, #E848C9 44.43%, #6734EE 104.57%);
-
 }
-
 
 .chat-page-user-list--item {
     display: flex;
@@ -473,6 +470,7 @@
 .match-it-header--input {
     background: #2B2B2B;
     border-radius: 7px;
+    font-size: 14px;
     width: 399px;
     padding-left: 40px;
     outline: none!important;
@@ -1065,9 +1063,12 @@
 }
 
 .gradient-card-outfit {
-    width: 460px;
-    min-height: 222px;
-    padding: 20px;
+    width: 500px;
+    height: 100%;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
     background: #000000;
     box-shadow: 44px 22px 25px rgba(0, 0, 0, 0.24), 0px 56px 63px -31px rgba(137, 95, 249, 0.39);
     border-radius: 16px;
@@ -1075,13 +1076,185 @@
 
 .gradient-card-outfit-h1 {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 22px;
-    /* identical to box height, or 138% */
-
-    display: flex;
-    align-items: center;
+    margin: 0;
     letter-spacing: -0.02em;
 
     color: #FFFFFF;
+}
+
+.gradient-card-outfit-p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.gradient-card-outfit-hr {
+    border-color:rgba(255, 255, 255, 1.0);
+    opacity: 1.0;
+    border-width: 0.7px;
+    margin-right: -20px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid;
+}
+
+.gradient-card-outfit-total-pieces {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 22px;
+
+    letter-spacing: -0.02em;
+
+    margin-bottom: 0px;
+    position: absolute;
+    right: 15px;
+    bottom: 4px;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.gradient-card-outfit-cost {
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 22px;
+
+    letter-spacing: -0.02em;
+    
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.gradient-card-outfit-img {
+    border-radius: 9px;
+    height: 100%;
+    width: 100%;
+}
+
+.gradient-white-top-card-outfit {
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    position: absolute;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 15px;
+    right: 0px;
+    top: 0px;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    background: white;
+    opacity: 0.16;
+}
+
+
+.blur {
+    background-position: center right;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.payment-button {
+    width: 110px;
+    height: 34px;
+    outline: none;
+    border: none;
+    right: -30px;
+    position: absolute;
+    top: -12px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #514B5A;
+    background: #FAFCFF;
+    box-shadow: -13px 20px 20px 12px rgb(0 0 0 / 57%);
+    border-radius: 37px;
+}
+
+.purple-gradient-add-to-calendar-card {
+    background: linear-gradient(94.04deg, #B093FF -42.39%, #8370FF -3.85%, #644FF5 20.1%, #5240DE 53.73%, #905CFF 79.03%, #9A5CFF 96.01%);
+    box-shadow: 44px 35px 25px rgba(0, 0, 0, 0.24), 0px 67px 63px -31px rgba(103, 52, 238, 0.39);
+    border-radius: 16px;
+    position: relative;
+    padding: 15px;
+    width: 500px;
+    border: 0.5px solid rgba(247, 201, 255, 0.5);
+}
+
+.purple-gradient-add-to-calendar-user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+}
+
+
+.purple-gradient-add-to-calendar-h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0;
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+}
+
+
+
+.purple-gradient-add-to-calendar-h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+
+    letter-spacing: -0.02em;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+
+.purple-gradient-add-to-calendar-p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+    padding-bottom: 20px;
+
+    letter-spacing: -0.02em;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.purple-gradient-add-to-calendar-hr {
+    border: 1px solid rgb(255, 255, 255);
+    border-width: 0.6px;
+    position: relative;
+    opacity: 0.3;
+    margin-left: -65px;
+    left: 60px;
+    width: 100%;
+    margin-right: -45px;
+}
+
+.send-message-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.397);
+    color: white;
+    width: 120px;
+    outline: none;
+    padding: 4px;
+    border-radius: 20px;
 }

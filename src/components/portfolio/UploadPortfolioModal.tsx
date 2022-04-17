@@ -1,21 +1,30 @@
 import React from "react"
 import { Modal } from 'react-bootstrap'
+import { ProfileService } from "../../networking/profiles/ProfileService";
 import { ImgGrid } from "../grid/ImgGrid";
 
-export const UploadPortfolioModal = ({...restProps}) => {
-    const [show, setShow] = React.useState(false);
+
+export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}: any) => {
     const [imgURL, setImgURL] = React.useState(['']);
+    const [rate, setRate] = React.useState(0);
     const [steps, setSteps] = React.useState(0);
 
-    const handleClose = () => { 
-        setShow(false);
-        setSteps(0);
-        setImgURL([""]);
-    };
 
-    const handleShow = () => { 
-        setShow(true)
-    };
+    const uploadDetails = async() => {
+        const stylistProfile = {
+            cost: rate as number,
+            interests: interests as Array<string>,
+            portfolio: imgURL as Array<string>
+        };
+
+        await ProfileService.createStylistProfile(stylistProfile).then((profile) => {
+            if (profile.profile != null) {
+                console.log("Success")
+            } else {
+                alert("Something went wrong!")
+            }
+        })
+    }
 
     const addImageURL = () => {
         setImgURL([...imgURL, ""])
@@ -34,11 +43,11 @@ export const UploadPortfolioModal = ({...restProps}) => {
 
     return (
         <>
-        <button className="finish-creating-outfit-btn" onClick={handleShow}>
+        {/* <button className="finish-creating-outfit-btn" onClick={handleShow}>
             Add your Portfolio
-        </button>
+        </button> */}
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={modal} onHide={showModal}>
                 
                 <Modal.Body>
 
@@ -66,7 +75,6 @@ export const UploadPortfolioModal = ({...restProps}) => {
                            <br></br>
 
                            <div style={{marginBottom: '20px'}} className="upload-portfolio-modal-btn-row">
-                               <button className="cancel-btn" onClick={handleClose}> Cancel </button>
                                <button className="next-button" onClick={() => setSteps(steps + 1)}> Next </button>
                            </div>
 
@@ -94,18 +102,41 @@ export const UploadPortfolioModal = ({...restProps}) => {
                         </div>
                     : steps === 2?
                         <div>
+                            <p className="upload-portfolio-modal-h1"> Step 3 </p>
 
-                            <p className="upload-portfolio-modal-h1"> You uploaded your portfolio successfully! </p>
+                            <br />
 
-                            <br></br>
-                            <br></br>
+                            <div style={{marginBottom: '20px'}}>
+                               <p className="upload-portfolio-modal-h1"> Add your Rate </p>
+                               <p className="text-center"> This is the cost per each outfit creation. </p>
 
-                            <div className="upload-portfolio-modal-btn-row">
-                                <button className="next-button" onClick={handleClose}> Submit </button>
+                               <div className="upload-outfit-rate-writer-row-container">
+                                    <input className="calendar-input" style={{width: 234}} placeholder={"Enter the cost"} type="number" value={rate} onChange={(text) => setRate(Number(text.target.value))} />
+                                </div>
+
                             </div>
-
+                            
+                            <div className="upload-portfolio-modal-btn-row">
+                                <button className="cancel-btn" onClick={() => setSteps(steps - 1)}> Back </button>
+                                <button className="next-button" onClick={() => setSteps(steps + 1)}> Next </button>
+                            </div>
                         </div>
-                    :null}
+                     
+                    :
+                    
+                    <div>
+                            <br />
+
+                        <p className="upload-portfolio-modal-h1"> Details have been uploaded successfully! </p>
+
+                        <br></br>
+                        <br></br>
+
+                        <div className="upload-portfolio-modal-btn-row">
+                            <button className="next-button" onClick={uploadDetails}> Submit </button>
+                        </div>
+
+                    </div>}
                 
                 </Modal.Body>
             </Modal>

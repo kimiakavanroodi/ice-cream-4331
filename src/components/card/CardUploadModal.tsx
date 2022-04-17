@@ -2,12 +2,13 @@ import React from "react";
 import { Modal } from "react-bootstrap"
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import { CardService } from "../../networking/card/CardService";
 
 export type Focused = "name" | "number" | "expiry" | "cvc";
 
 export const CardUploadModal = ({...restProps}: any) => {
     const [card_object, setCardInfo] = React.useState({
-        number: "", cvc: "", name: "", expiry: ""
+        number: 0, cvc: 0, name: "", expiry: ""
     })
     const [focus, setFocus] = React.useState("");
     const [show, setShow] = React.useState(false);
@@ -26,12 +27,18 @@ export const CardUploadModal = ({...restProps}: any) => {
         });
     };
 
-    console.log(card_object)
+    const submitCardInfo = async() => {
+        await CardService.addCard(card_object).then((card) => {
+            if (card != null) {
+                window.location.href = '/onboard';
+            }
+        })
+    };
 
     return (
         <>
          <button className="finish-creating-outfit-btn" onClick={handleShow}>
-            Finish Creating Outfit
+            Add your Card
         </button>
 
             <Modal show={show} onHide={handleClose}>
@@ -93,11 +100,8 @@ export const CardUploadModal = ({...restProps}: any) => {
                             <br></br>
 
                             <div className="outfit-modal-submission-modal-row">
-                                <button className="outfit-modal-submission-cancel-button" onClick={handleClose}>
-                                    Cancel
-                                </button>
 
-                                <button className="outfit-modal-submission-btn" onClick={handleClose}>
+                                <button className="outfit-modal-submission-btn" onClick={submitCardInfo}>
                                     Add Card
                                 </button>
                             </div>

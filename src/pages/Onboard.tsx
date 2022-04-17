@@ -8,13 +8,39 @@ import MoneyLogo from '../assets/onboarding/money.svg';
 import foodLogo from '../assets/onboarding/food.svg';
 import styleLogo from '../assets/onboarding/Style.svg';
 import backgroundImg from '../assets/onboarding/backgroundimg.svg';
+import { ProfileService, UserRole } from '../networking/profiles/ProfileService';
+import { UploadPortfolioModal } from '../components/portfolio/UploadPortfolioModal';
+
 
 export const OnBoard = ({...restProps}) => { 
   const [count, setCount] = React.useState(0);
-  const [data, setData] = React.useState({
-    name : "", age: "0"
-  });
-  console.log(count, data);
+  const [portfolioModal, setPortfolioModal] = React.useState(false);
+  const [interests, setInterests] = React.useState([
+    "less than 18", "$25 - $49", "Casual/Everyday", "nice"
+  ]);
+
+  const submitProfile = async() => {
+
+    const role = await ProfileService.getUserRole() 
+
+    if (role.role === "stylist") {
+      setPortfolioModal(true)
+
+    } else {
+      const style_seeker_profile = {
+        interests: interests
+      };
+      await ProfileService.createStyleSeekerProfile(style_seeker_profile).then((profile) => {
+        if (profile.profile != null) {
+          return window.location.href = '/feed'
+        } else {
+          alert('Something went wrong')
+        }
+      })
+    }
+
+  };
+
   //style={{ height: "100vh", background: "linear-gradient(140.42deg, #101214 11.23%, #131516 26.36%, #16161A 47.52%, #101214 66.88%, #1D1D23 84.53%)"}}
   return ( 
   <div style={{ height: "100vh", backgroundImage: `url(${backgroundImg})` }}> 
@@ -270,13 +296,13 @@ export const OnBoard = ({...restProps}) => {
 
               <select className= "select">
                 <option value=" ">Select a fashion style</option>
-                <option value="less than 18"> Vintage</option>
-                <option value="18 to 34">Artsy</option>
-                <option value="35 to 50">Casual</option>
-                <option value="51 to 69">Chic</option>
-                <option value="greater than 69"> Trendy</option>
-                <option value="greater than 69"> Vibrant</option>
-                <option value="greater than 69"> Sporty</option>
+                <option value="Vintage"> Vintage</option>
+                <option value="Artsy">Artsy</option>
+                <option value="Casual">Casual</option>
+                <option value="Chic">Chic</option>
+                <option value="Trendy"> Trendy</option>
+                <option value="Vibrant"> Vibrant</option>
+                <option value="Sporty"> Sporty</option>
               </select>
               
 
@@ -311,6 +337,7 @@ export const OnBoard = ({...restProps}) => {
                
                { count==3?
                  <button className="finishBtn" onClick={(events) => {
+                  submitProfile()
                   if (count < 3 ) {
                    setCount(count + 1)
                   }
@@ -326,6 +353,8 @@ export const OnBoard = ({...restProps}) => {
                  Next Step
                 </button>
                 }
+
+                <UploadPortfolioModal interests={interests} showModal={setPortfolioModal} modal={portfolioModal}   />
                
                
           </div>

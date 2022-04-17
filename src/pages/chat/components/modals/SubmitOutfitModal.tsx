@@ -3,6 +3,8 @@ import { Modal, Button } from "react-bootstrap"
 
 export const SubmitOutfitModal = ({pieces}: any, {setPieces}: any) => {
     const [title, setTitle] = React.useState("");
+    const [description, setDesc] = React.useState("");
+
     const [show, setShow] = React.useState(false);
 
     const handleClose = () => setShow(false);
@@ -20,6 +22,12 @@ export const SubmitOutfitModal = ({pieces}: any, {setPieces}: any) => {
               <div className="outfit-modal-submission-modal">
                 <p className="calendar-h2" style={{fontSize: '15px', textAlign: 'center', marginBottom: '20px'}}>What do you name this outfit?</p>
                 <input value={title} onChange={(text) => setTitle(text.target.value)} placeholder="Enter the name of this outfit" className="calendar-input" />
+
+                <br />
+                <br />
+
+                <p className="calendar-h2" style={{fontSize: '15px', textAlign: 'center', marginBottom: '20px'}}>List a summary for it.</p>
+                <textarea style={{minHeight: '86px'}} value={title} onChange={(text) => setTitle(text.target.value)} placeholder="Enter the name of this outfit" className="calendar-input" />
               </div>
 
               <div className="outfit-modal-submission-modal-row">

@@ -96,19 +96,48 @@ export const ChatPage = ({...restProps} : any) => {
                             <br></br>
                             <br></br>
 
+                            <div style={{marginBottom: 20}} className="gradient-card-outfit-row">
+                                <div className="purple-gradient-add-to-calendar-card">
+                                    <div className="gradient-card-outfit-roww">
+
+                                        <div className="gradient-white-top-card-outfit"></div>
+                                        <button style={{width: 150}} className="payment-button"> + Google Calendar </button>
+
+                                        <img className="purple-gradient-add-to-calendar-user-icon" src="https://styles.redditmedia.com/t5_206tw0/styles/profileIcon_snoo9436956f-e57e-4bac-8f9f-d525e82406b9-headshot.png?width=256&height=256&crop=256:256,smart&s=976637d0b945aac26e7d625acbf5eabfa0a7f857" />
+                                        
+                                        <div style={{flex: 2, alignItems: "flex-start"}} className="gradient-card-outfit-column">
+                                            <p className="purple-gradient-add-to-calendar-h1"> Rediscuss outfit ideas </p>
+                                            <p className="purple-gradient-add-to-calendar-h2"> Tomorrow at 3:45 PM ET </p>
+                                            <hr className="purple-gradient-add-to-calendar-hr" />
+                                            <p className="purple-gradient-add-to-calendar-p"> looking through new portfolio photos & setting a time to discuss possible alternatives to the outfits currently send and offered. </p>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div className="gradient-card-outfit-row">
                                 <div className="gradient-card-outfit">
                                     <div className="gradient-card-outfit-roww">
-                                        <div style={{flex: 1}} className="gradient-card-outfit-column">
-                                            <p className="gradient-card-outfit-h1"> sdf </p>
-
+                                        <div style={{flex: 1, alignItems: "flex-end", marginRight: '15px', alignSelf: "normal"}} className="gradient-card-outfit-column">
+                                           <img className="gradient-card-outfit-img blur" src="https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C91oV4aPvNdL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png" />
                                         </div>
+
+                                        <div className="gradient-white-top-card-outfit"></div>
+                                        <button className="payment-button"> Pay Outfit </button>
                                         
-                                        <div style={{flex: 4}} className="gradient-card-outfit-column">
-                                        <p className="gradient-card-outfit-h1"> sdf </p>
+                                        <div style={{flex: 2, alignItems: "flex-start"}} className="gradient-card-outfit-column">
+                                            <p className="gradient-card-outfit-h1"> Casual outdoor outfit 1# </p>
+                                            <p className="gradient-card-outfit-cost"> $143.21 total cost </p>
+                                            <hr className="gradient-card-outfit-hr" style={{marginTop: '15px'}} />
+
+                                            <p className="gradient-card-outfit-p"> looking through new portfolio photos & setting a time to discuss possible alternatives to the outfits currently send and offered. </p>        
+
+                                            <p className="gradient-card-outfit-total-pieces"> 6 total pieces </p>                                
                                         </div>
 
+                                        <div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -175,8 +204,8 @@ export const ChatPage = ({...restProps} : any) => {
                                     <input className="write-a-message-placeholder" placeholder="Write a message..." />
                                 </div>
 
-                                <div style={{paddingRight: 20}}>
-                                    <button> Send </button>
+                                <div className="" style={{paddingRight: 20}}>
+                                    <button className="send-message-btn"> Send </button>
                                 </div>
                             </div>
                            

@@ -7,7 +7,29 @@ import { FadeIn } from 'ts-react-fade';
 import  ApproveIcon from "../../../assets/chat/feed/approve-icon.svg"
 import SkipIcon from "../../../assets/chat/feed/skip-icon.svg"
 
+
 export const Feed = ({...restProps}) => {
+    const [stylists, setStylists] = React.useState([]);
+    const [index, setIndex] = React.useState(0);
+    const [currStylist, setCurrStylist] = React.useState({})
+
+    const resetStylists = () => {
+
+    };
+
+    const skipStylist = () => {
+
+    };
+
+    const createMatch = () => {
+
+    }
+
+    React.useEffect(() => {
+
+    }, [])
+
+    
     return (
         <div className="feed-page-background">
 
