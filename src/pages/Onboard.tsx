@@ -23,13 +23,15 @@ export const OnBoard = ({...restProps}) => {
 
     const role = await ProfileService.getUserRole() 
 
+    console.log(role)
+
     if (role.role === "stylist") {
       setPortfolioModal(true)
 
     } else {
       const style_seeker_profile = {
         interests: interests
-      };
+      }
       await ProfileService.createStyleSeekerProfile(style_seeker_profile).then((profile) => {
         if (profile.profile != null) {
           return window.location.href = '/feed'

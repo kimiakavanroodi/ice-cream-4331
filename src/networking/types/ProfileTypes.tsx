@@ -19,9 +19,20 @@ export interface UploadStyleSeekerProfile {
     interests: Array<string>
 }
 
-export interface StylistProfile {
-    
+export interface BulkStylists {
+    stylists: Array<StylistProfile> | null;
+}
 
+export interface StylistProfile {
+    email: string,
+    name: string,
+    age: string,
+    _id: string,
+    profile_img: string,
+    role: string,
+    cost: number,
+    interests: Array<string>,
+    portfolio: Array<string>
 }
 
 

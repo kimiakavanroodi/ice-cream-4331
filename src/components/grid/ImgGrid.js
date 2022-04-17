@@ -12,13 +12,15 @@ const createGridObject = (imageURLs) => {
 export const ImgGrid =({imagesURL, ...restProps}) => {
     const [imgArr, setImgArr] = React.useState(createGridObject(imagesURL));
 
+    console.log(imagesURL)
+
     React.useEffect(() => {
 
-        if (imagesURL !== imgArr) {
-            createGridObject(imagesURL)
+        if (imagesURL != imgArr) {
+            setImgArr(createGridObject(imagesURL))
         }
 
-    }, [])
+    }, [imagesURL])
 
     return (
         <>

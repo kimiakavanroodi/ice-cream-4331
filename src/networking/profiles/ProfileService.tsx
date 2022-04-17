@@ -1,5 +1,5 @@
 import db from "../firebase";
-import { NewUserBody, UploadStyleSeekerProfile, UploadStylistProfile } from "../types/ProfileTypes";
+import { BulkStylists, NewUserBody, StylistProfile, UploadStyleSeekerProfile, UploadStylistProfile } from "../types/ProfileTypes";
 import { ProfileManager } from "./ProfileManager";
 import "firebase/auth"
 
@@ -9,10 +9,21 @@ export interface UserRole {
 
 export const ProfileService = {
 
+    getUserName: async(): Promise<any | null> => {
+        return await new Promise(async(resolve) => {
+            return await db.auth().onAuthStateChanged(async(user) => {
+                if (user) {
+                    resolve(user.displayName)
+                }
+            })
+        }).then((name) => name)
+    },
+
     getUserToken: async(): Promise<string | null> => {
         return await new Promise(async(resolve, reject) => {
             await db.auth().onAuthStateChanged(async(user) => {
                 if (user) {
+                    console.log((await user.getIdTokenResult(true)).token)
                     resolve((await user.getIdTokenResult(true)).token);
                 } else {
                     resolve(null)
@@ -39,6 +50,28 @@ export const ProfileService = {
         } catch (err) {
             return {
                 "role" : null
+            };
+        }
+    },
+
+    getBulkStylists: async(): Promise<BulkStylists>  => {
+        try {
+            const getBulkLists = new Promise(async(resolve, reject) =>  {
+                await ProfileManager.getBulkStylists().then((user) => {
+                    if (user.status == 200 && user != null) {
+                        resolve(user.data.stylists);
+                    } else {
+                        resolve(null)
+                    }
+                })
+            }).then((user) => user)
+
+            return {
+                "stylists" : await getBulkLists as Array<StylistProfile>
+            }
+        } catch (err) {
+            return {
+                "stylists" : null
             };
         }
     },

@@ -24,7 +24,7 @@ export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}
                 alert("Something went wrong!")
             }
         })
-    }
+    };
 
     const addImageURL = () => {
         setImgURL([...imgURL, ""])

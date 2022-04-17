@@ -13,7 +13,24 @@ import { BgLayout } from "../../../components/layout/BgLayout"
 
 export const ChatPage = ({...restProps} : any) => {
     const [outfitModal, isOutfitModal] = React.useState(false)
+    const [chatId, setChatId] = React.useState("");
+    const [chats, setAllChats] = React.useState("");
+    const [message, setMessage] = React.useState("")
 
+    const getAllChats = async() => {
+
+    };
+
+    const getChat = async(chatId : string) => {
+
+    };
+
+    React.useEffect(() => {
+
+    }, [])
+
+
+   
     return (
         <div className="chat-page-background">
 
