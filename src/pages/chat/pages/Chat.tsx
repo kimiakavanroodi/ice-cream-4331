@@ -92,6 +92,27 @@ export const ChatPage = ({...restProps} : any) => {
 
                         <div className="chat-page-messages-body">
 
+                            <br></br>
+                            <br></br>
+                            <br></br>
+
+
+                            <div className="gradient-card-outfit-row">
+                                <div className="gradient-card-outfit">
+                                    <div className="gradient-card-outfit-roww">
+                                        <div style={{flex: 1}} className="gradient-card-outfit-column">
+                                            <p className="gradient-card-outfit-h1"> sdf </p>
+
+                                        </div>
+                                        
+                                        <div style={{flex: 4}} className="gradient-card-outfit-column">
+                                        <p className="gradient-card-outfit-h1"> sdf </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                         <div className="chat-page-text-sender-container">
                                 <div className="chat-page-text-sender">
                                     <p className="chat-page-main-text-sender"> Unfortunately, I cannot change it from now. You could always schedule another session to change the outfits. </p>
@@ -140,6 +161,8 @@ export const ChatPage = ({...restProps} : any) => {
                                     <p className="chat-page-text-recipient-date"> 3:42 PM </p>
                                 </div>
                             </div>
+
+
 
 
                         </div>
