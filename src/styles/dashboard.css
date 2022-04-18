@@ -1,0 +1,286 @@
+.bodyText {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 5px;
+    /* identical to box height */
+
+    letter-spacing: -0.065em;
+
+    color: #FFFFFF;
+}
+
+
+.dashboard-rainbow-card {
+    background: radial-gradient(102.73% 86.56% at 9.7% 8.59%, rgba(175, 85, 255, 0.9) 26.86%, rgba(255, 66, 134, 0.9) 69.89%, rgba(255, 163, 64, 0.9) 90.26%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #FFFFFF;
+    box-shadow: -11px 12px 10px rgba(0, 0, 0, 0.25), 26px 29px 15px rgba(0, 0, 0, 0.25), 57px 35px 26px 11px rgba(0, 0, 0, 0.25);
+    border-radius: 19px;
+    position: relative;
+    cursor: pointer;
+    width: 165px;
+    transition: .4s ease;
+    height: 200px;
+    margin-right: 5px;
+}
+
+.cube-wrap {
+    background: linear-gradient(rgba(#52565A) 1.43%, rgba(#494949) 13.36%, rgba(#353439) 30.5%,rgba(#212022) 51.94%, rgba(#333436) 73.92%, rgba(#252627) 79.35%, rgba(#151718) 97.13%);
+    perspective: 1000px;
+    perspective-origin: 134% 187%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+  }
+
+.dashboard-rainbow-card:hover {
+    transition: .4s ease;
+    perspective: 1000px;
+    perspective-origin: 234% 187%;
+    transform: translateY(-30px);
+    box-shadow: 0px 28px 36px -7px rgba(141, 102, 223, 0.38), 0px 4px 4px rgba(0, 0, 0, 0.25), -6px 15px 19px rgba(0, 0, 0, 0.25), -23px 58px 31px -12px rgba(0, 0, 0, 0.25), 7px 46px 31px 11px rgba(0, 0, 0, 0.25);
+
+}
+
+.dashboard-transparent-overlay-triangles_bottom {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(157.38deg, rgba(255, 255, 255, 0.2) 53.79%, rgba(255, 255, 255, 0) 101.57%);
+    filter: blur(1px);
+    border: 30px;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+}
+
+.dashboard-transparent-overlay-triangles_top {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(157.38deg, rgba(255, 255, 255, 0.2) 53.79%, rgba(255, 255, 255, 0) 101.57%);
+    filter: blur(1px);
+    border: 30px;
+    clip-path: polygon(100% 1%, 0% 100%, 100% 100%);
+}
+
+.profile-card-container {
+    padding-top: 10px;
+    display: flex;
+    
+}
+
+.profile-card {
+    width: 982px;
+    height: 771px;
+    border-radius: 25px;
+    background: linear-gradient(93.88deg, rgba(69, 67, 71, 0.94) 17%, rgba(38, 37, 39, 0.94) 62.67%, rgba(42, 43, 44, 0.94) 74.27%, rgba(50, 51, 54, 0.94) 81.77%);
+    box-shadow: 48px 55px 67px rgba(0, 0, 0, 0.25), 33px 37px 38px rgba(0, 0, 0, 0.53), inset -4px 4px 3px rgba(0, 0, 0, 0.22);
+}
+.profile-pic-container {
+    padding: 10px;
+    justify-content: left;
+
+}
+.profile-pic {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background: linear-gradient(127.83deg, #EE9D54 9.6%, #7A6DFF 44.48%, #E848C9 99.57%);
+}
+
+.profile-img-container {
+    position: absolute;
+    padding: 5px;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: left;
+    max-width: 100%;
+    flex-direction: row;
+}
+
+.stylist-name {
+    padding-top: 35px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+
+    letter-spacing: -0.06em;
+
+    color: #FFFFFF;
+}
+
+.check-mark {
+    padding-left: 10px;
+    padding-top: 35px;
+}
+
+
+
+.dashboard-rainbow-card-black-banner {
+    width: 100%;
+    height: 51px;
+
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+
+    background: #000000;
+    padding: 7px;
+
+    position: absolute;
+    bottom: 0px;
+    z-index: 999;
+}
+
+.dashboard-rainbow-card-black-banner-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    max-width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.dashboard-rainbow-card-approve-btn {
+    border: 1px solid #53FFFF;
+    background: none;
+    outline: none;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 10px;
+    justify-content: flex-start;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.065em;
+
+    color: #77FF7E;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    width: 91px;
+    transition: .4s all;
+
+    height: 26px;
+    letter-spacing: -0.065em;
+    
+    
+    border-radius: 21px;
+}
+
+.dashboard-rainbow-card-approve-btn:hover {
+    background: linear-gradient(180deg, #7BFF70 0%, #53FFFF 100%);
+    color: black;
+    transition: .4s all;
+}
+
+.dashboard-rainbow-card-skip-btn {
+
+}
+
+.dashboard-rainbow-card-decline-btn {
+    border: 1px solid #FF7070;
+    box-sizing: border-box;
+    background: none;
+
+    border-radius: 100%;
+    width: 26px;
+    height: 26px;
+
+    
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 13px;
+    letter-spacing: -0.065em;
+
+    box-shadow: 0px 0px 6px 2px rgba(255, 162, 162, 0.44);
+    color: #FF877B;
+}
+
+
+.body-subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+    letter-spacing: -0.03em;
+
+    color: rgba(255, 255, 255, 0.55);
+
+}
+
+.dashboard-rainbow-card-gradient-card {
+    background: linear-gradient(106.89deg, #E848C9 8.97%, rgba(122, 109, 255, 0.49) 88.27%);
+    border: 1px solid rgba(223, 169, 242, 0.43);
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    height: 380px;
+    border-radius: 25px
+}
+
+.dashboard-rainbow-card-gradient-transparent-card {
+    width: 100%;
+    border-radius: 38px;
+    height: 90%;
+    
+    padding: 15px;
+    padding-bottom: 30px;
+    background: linear-gradient(93.88deg, rgba(105, 113, 121, 0.5) 17%, rgba(38, 37, 39, 0.5) 62.67%, rgba(42, 43, 44, 0.5) 74.27%, rgba(50, 51, 54, 0.5) 81.77%);
+    box-shadow: 48px 55px 67px rgba(0, 0, 0, 0.15), 33px 37px 38px rgba(0, 0, 0, 0.53), inset -4px 4px 3px rgba(0, 0, 0, 0.22);
+}
+
+.dashboard-rainbow-card-gradient-user-profile-card {
+    background: #191A1C;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 172px;
+    height: 252px;
+    box-shadow: 30px -15px 9px rgba(0, 0, 0, 0.33);
+}
+
+.dashboard-rainbow-card-gradient-user-profile-card-img {
+    width: 172px;
+    height: 252px;
+}
+
+.dashboard-rainbow-card-decline-btn:hover {
+    
+}
+
+.dashboard-rainbow-card-expand-btn {
+    top: 10px;
+    right: 3px;
+    position: absolute;
+}
+
+.dashboard-section-1-gradient-card-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.dashboard-section-1-gray-backdrop-card {}
