@@ -9,27 +9,74 @@ import { CalendarPopover } from "../components/popover/CalendarPopover";
 import { OutfitModal } from "../components/modals/OutfitModal";
 import { MainHeader } from "../../../components/layout/header/MainHeader";
 import { BgLayout } from "../../../components/layout/BgLayout"
+import { ChatService } from "../../../networking/chat/ChatService";
+import { AllChats, Chat } from "../../../networking/types/ChatTypes";
+import { ProfileService, UserRole } from "../../../networking/profiles/ProfileService";
+import { io } from "socket.io-client"
 
+let socket = io("http://localhost:8080")
 
 export const ChatPage = ({...restProps} : any) => {
     const [outfitModal, isOutfitModal] = React.useState(false)
-    const [chatId, setChatId] = React.useState("");
-    const [chats, setAllChats] = React.useState("");
+    const [chatId, setCurrChat] = React.useState({profile:  { name : "" }} as unknown);
+    const [chats, setAllChats] = React.useState([] as unknown as AllChats[]);
+    const [role, setRole] = React.useState("" as unknown as UserRole);
     const [message, setMessage] = React.useState("")
 
     const getAllChats = async() => {
+        await ChatService.getAllChat().then((chatsInfo) => {
+            if (chatsInfo !== null) {
+                setAllChats(chatsInfo as unknown as AllChats[])
+                    // @ts-ignore: Unreachable code error
+                getChat(chatsInfo[0].chat_id)
+                
+            }
+        })
+    };
 
+    const updateChat = (key: string, value: any) => {
+
+    };
+
+    const getRole = async() => {
+        await ProfileService.getUserRole().then((role) => {
+            setRole(role.role as unknown as UserRole)
+        })
     };
 
     const getChat = async(chatId : string) => {
+        await ChatService.getChat(chatId).then((chat) => {
+            if (chat != null) {
+                setCurrChat(chat)
+            }
+        })
+    }
 
-    };
+        // @ts-ignore: Unreachable code error
+    React.useEffect(() => {
+
+                // @ts-ignore: Unreachable code error
+        socket.on('connect', (ok) => { 
+            console.log('love')
+
+            socket.emit("chats", "chats-625c9e3a46889398cc7fb863");
+          
+            socket.on('UPDATE_CHAT', (data) => {
+              console.log(data.messages)
+            })
+          });
+          
+    }, [socket]);
+
+
 
     React.useEffect(() => {
 
+        getAllChats();
+
     }, [])
 
-
+    console.log(chats)
    
     return (
         <div className="chat-page-background">
@@ -56,21 +103,12 @@ export const ChatPage = ({...restProps} : any) => {
                             <div className="chat-page-user-list--item "> <img style={{width: '35px', filter: "drop-shadow(18px 20px 13px rgba(0, 0, 0, 0.94))"}} src={FloatingDiamond} /> </div>
                            
                            <div style={{overflowY: 'auto', height: '80vh'}}>
-                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+                               {chats.map((chat) => {
+                                   return <img onClick={() => getChat(chat.chat_id)} src={chat.profile.profile_img} className="profile-pic-url" />
 
-                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
-
-                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
-                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
-
-                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
-
-                                <img src={"https://media-exp1.licdn.com/dms/image/C4D03AQE505jykxoelQ/profile-displayphoto-shrink_200_200/0/1607291489330?e=1655337600&v=beta&t=V3up5Df89CpERCe6-X7u8p9mzMkKcbCN0_Yt4xPuu8Y"} className="profile-pic-url" />
+                               })}
                             </div>
-
                         </div>
-
-
                     </div>
 
                     <div className="chat-page-main-body">
@@ -86,7 +124,10 @@ export const ChatPage = ({...restProps} : any) => {
                                 </div>
 
                                 <div className="chat-page-top-banner-left-container--p">
-                                    <p className="chat-page-top-banner-left-container--name"> Jason Times </p>
+                                    <p className="chat-page-top-banner-left-container--name"> {
+                                            // @ts-ignore: Unreachable code error
+                                    chatId.profile.name
+                                    } </p>
                                     <p className="chat-page-top-banner-left-container--last-seen"> Last seen 16 minutes ago </p>
                                 </div>
 
