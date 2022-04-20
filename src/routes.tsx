@@ -7,6 +7,7 @@ import { Login } from './pages/Login';
 import { ChatPage } from './pages/chat/pages/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Feed } from './pages/feed/pages/Feed';
+import { Dashboard } from './pages/dashboard/Dashboard'
 
 const App = ({...restProps}) => {
 
@@ -39,6 +40,10 @@ const App = ({...restProps}) => {
               element={<Feed />} 
             />
 
+          <Route 
+              path='/dashboard'
+              element={<Dashboard />} 
+            />
 
         </Routes>
       </BrowserRouter>
