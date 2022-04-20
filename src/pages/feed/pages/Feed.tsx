@@ -80,7 +80,7 @@ export const Feed = ({...restProps}) => {
 
         const timer = setTimeout(() => {
 
-            return toast.dark('Sent a match request! 🦄 ', {
+            return toast.dark('Someone matched with you! 🦄 ', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -90,7 +90,7 @@ export const Feed = ({...restProps}) => {
                 progress: undefined,
             });
 
-        }, 4000)
+        }, 10000)
 
         return () => clearTimeout(timer)
 
