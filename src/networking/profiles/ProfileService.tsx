@@ -9,6 +9,16 @@ export interface UserRole {
 
 export const ProfileService = {
 
+    getUID: () => {
+        return new Promise((resolve) => {
+            return db.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    resolve(user.uid)
+                }
+            })
+        }).then((uid) => uid)
+    },
+
     getUserName: async(): Promise<any | null> => {
         return await new Promise(async(resolve) => {
             return await db.auth().onAuthStateChanged(async(user) => {

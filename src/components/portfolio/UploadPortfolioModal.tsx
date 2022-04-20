@@ -7,12 +7,14 @@ import { ImgGrid } from "../grid/ImgGrid";
 export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}: any) => {
     const [imgURL, setImgURL] = React.useState(['']);
     const [rate, setRate] = React.useState(0);
+    const [status, setStatus] = React.useState("");
     const [steps, setSteps] = React.useState(0);
 
 
     const uploadDetails = async() => {
         const stylistProfile = {
             cost: rate as number,
+            description: status as string,
             interests: interests as Array<string>,
             portfolio: imgURL as Array<string>
         };
@@ -111,7 +113,8 @@ export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}
                                <p className="text-center"> This is the cost per each outfit creation. </p>
 
                                <div className="upload-outfit-rate-writer-row-container">
-                                    <input className="calendar-input" style={{width: 234}} placeholder={"Enter the cost"} type="number" value={rate} onChange={(text) => setRate(Number(text.target.value))} />
+                               {// @ts-ignore: Unreachable code error
+                                    <input className="calendar-input" style={{width: 234}} placeholder={"Enter the cost"} type="number" value={rate} onChange={(text) => setRate(text.target.value)} />}
                                 </div>
 
                             </div>
@@ -122,6 +125,28 @@ export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}
                             </div>
                         </div>
                      
+                    : steps === 3 ? 
+                    <div>
+                        <p className="upload-portfolio-modal-h1"> Step 4 </p>
+
+                        <br />
+
+                        <div style={{marginBottom: '20px'}}>
+                        <p className="upload-portfolio-modal-h1"> Add something about you! </p>
+                        <p className="text-center"> Let people know what you are about </p>
+
+                        <div className="upload-outfit-rate-writer-row-container">
+                        {// @ts-ignore: Unreachable code error
+                                <input className="calendar-input" style={{width: 234}} placeholder={"Enter something about you"} value={status} onChange={(text) => setStatus(text.target.value)} />}
+                            </div>
+
+                        </div>
+                        
+                        <div className="upload-portfolio-modal-btn-row">
+                            <button className="cancel-btn" onClick={() => setSteps(steps - 1)}> Back </button>
+                            <button className="next-button" onClick={() => setSteps(steps + 1)}> Next </button>
+                        </div>
+                    </div>
                     :
                     
                     <div>

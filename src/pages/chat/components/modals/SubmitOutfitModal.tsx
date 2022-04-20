@@ -1,7 +1,9 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap"
+import { OutfitService } from "../../../../networking/chat/outfits/OutfitService";
 
-export const SubmitOutfitModal = ({pieces}: any, {setPieces}: any) => {
+
+export const SubmitOutfitModal = ({chat_id, pieces, setPieces}: any) => {
     const [title, setTitle] = React.useState("");
     const [description, setDesc] = React.useState("");
 
@@ -9,6 +11,21 @@ export const SubmitOutfitModal = ({pieces}: any, {setPieces}: any) => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const submitOutfit = async() => {
+      const outfitBody = {
+        title: title,
+        description: description,
+        pieces: pieces
+      }
+
+      return await OutfitService.createOutfit(chat_id, outfitBody).then((outfit) => {
+        console.log(outfit)
+        alert("Successfully created the outfit!")
+        handleClose()
+      })
+
+    };
     
     return (
         <>
@@ -27,7 +44,7 @@ export const SubmitOutfitModal = ({pieces}: any, {setPieces}: any) => {
                 <br />
 
                 <p className="calendar-h2" style={{fontSize: '15px', textAlign: 'center', marginBottom: '20px'}}>List a summary for it.</p>
-                <textarea style={{minHeight: '86px'}} value={title} onChange={(text) => setTitle(text.target.value)} placeholder="Enter the name of this outfit" className="calendar-input" />
+                <textarea style={{minHeight: '86px'}} value={description} onChange={(text) => setDesc(text.target.value)} placeholder="Enter the name of this outfit" className="calendar-input" />
               </div>
 
               <div className="outfit-modal-submission-modal-row">
@@ -35,7 +52,7 @@ export const SubmitOutfitModal = ({pieces}: any, {setPieces}: any) => {
                     Cancel
                 </button>
 
-                <button className="outfit-modal-submission-btn" onClick={handleClose}>
+                <button className="outfit-modal-submission-btn" onClick={submitOutfit}>
                     Submit
                 </button>
             </div>

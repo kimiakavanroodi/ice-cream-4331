@@ -19,6 +19,7 @@ export const Feed = ({...restProps}) => {
             name: "",
             _id: "",
             interests: [],
+            description: "",
             portfolio: [],
             profile_img: "",
             age: ""
@@ -86,13 +87,10 @@ export const Feed = ({...restProps}) => {
 
                             <div className="feed-stylist-profile-description-container">
                                 <FadeIn delay={1000}>
-                                    <p className="feed-stylist-profile-h1"> {currStylist.name} <span style={{fontSize: 12, marginLeft: 3}}> {currStylist.cost} </span> </p>
-                                    <p className="feed-stylist-profile-h2"> {currStylist.age} years old </p>
+                                    <p className="feed-stylist-profile-h1"> {currStylist.name} <span style={{fontSize: 12, marginLeft: 3}}> AGE {currStylist.cost} </span> </p>
+                                    <p className="feed-stylist-profile-h2"> ${currStylist.cost} per outfit  </p>
                                     <p className="feed-stylist-profile-p"> {
-                                        currStylist.interests.map((interest) => {
-                                            return <span> </span>
-                                        })
-                                    } </p>
+                                        currStylist.description} </p>
                                 </FadeIn>
                             </div>
 

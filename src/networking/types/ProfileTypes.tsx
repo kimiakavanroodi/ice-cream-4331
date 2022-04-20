@@ -27,6 +27,7 @@ export interface StylistProfile {
     email: string,
     name: string,
     age: string,
+    description: string,
     _id: string,
     profile_img: string,
     role: string,

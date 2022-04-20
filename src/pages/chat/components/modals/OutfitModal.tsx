@@ -14,7 +14,7 @@ interface outfit_piece {
 }
 
 
-export const OutfitModal = ({setOpen} : any, {...restProps}) => {
+export const OutfitModal = ({chat_id, setOpen, ...restProps}: any) => {
     const [new_outfits, createOutfit] = React.useState([{
         name: "", type: "", note: "", brand: "", cost: "", img_url: "", link: ""
     }])
@@ -50,11 +50,8 @@ export const OutfitModal = ({setOpen} : any, {...restProps}) => {
         <div className="outfit-modal">
 
             <div className="outfit-modal-container">
-                <div style={{justifyContent: "space-between", alignItems: 'baseline'}} className="outfit-modal-row">
-                    <div className="outfit-modal-row">
-                        <p style={{marginRight: '57px'}} className="outfit-modal-nav-links"> Create Outfit </p>
-                        <p className="outfit-modal-nav-links"> View All Outfits</p>
-                    </div>
+                <div style={{justifyContent: "flex-end", alignItems: 'baseline'}} className="outfit-modal-row">
+                  
                     <div>
                     <p className="outfit-modal-exit-link" onClick={() => { setOpen(false); resetPieces() }}> Exit</p>
                     </div>
@@ -110,7 +107,7 @@ export const OutfitModal = ({setOpen} : any, {...restProps}) => {
     
                                             <div className="outfit-modal-input-container">
                                                 <p className="calendar-h2"> Price  </p>
-                                                <input value={piece.cost} onChange={(text) => updatePiece(idx, "cost", text.target.value)} placeholder="Enter the cost" className="calendar-input" />
+                                                <input type="number" value={piece.cost} onChange={(text) => updatePiece(idx, "cost", text.target.value)} placeholder="Enter the cost" className="calendar-input" />
                                             </div>
 
                                             <div className="outfit-modal-input-container">
@@ -149,11 +146,9 @@ export const OutfitModal = ({setOpen} : any, {...restProps}) => {
                     <img onClick={addNewPiece} className="outfit-piece-icon" src={AddOutfitPiece} />                  
                 </div>
 
-                <div>
-                    <UploadPortfolioModal />
-                </div>
+          
                 <div className="outfit-modal-column" style={{justifyContent: "flex-end", alignItems: "flex-end"}}>
-                    <SubmitOutfitModal pieces={new_outfits} setPieces={createOutfit} />
+                    <SubmitOutfitModal chat_id={chat_id} pieces={new_outfits} setPieces={createOutfit} />
                     <p className="outfit-modal-num-pieces"> {new_outfits.length} total pieces </p>
                 </div>
 
