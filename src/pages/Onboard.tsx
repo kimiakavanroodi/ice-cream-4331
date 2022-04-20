@@ -184,9 +184,9 @@ export const OnBoard = ({...restProps}) => {
             count ==0? 
               <div className="questionBody">
                 <div className="questions">
-                  <h3>
+                  <h5>
                     What is your age group?
-                  </h3>
+                  </h5>
                 </div>
               </div>
               : null
@@ -196,9 +196,9 @@ export const OnBoard = ({...restProps}) => {
             count ==1?
               <div className="questionBody">
                 <div className="questions">
-                  <h3>
+                  <h5>
                     What does your budget look like?
-                  </h3> 
+                  </h5> 
                 </div>
               </div>
               : null
@@ -209,9 +209,9 @@ export const OnBoard = ({...restProps}) => {
             
               <div className="questionBody">
                 <div className="questions">
-                  <h3>
+                  <h5>
                     What type of clothing are you interested in?
-                  </h3>
+                  </h5>
                   
                 </div>
             </div>
@@ -224,9 +224,9 @@ export const OnBoard = ({...restProps}) => {
             
               <div className="questionBody">
                 <div className="questions">
-                  <h3>
+                  <h5>
                     How would you describe your style?
-                  </h3>
+                  </h5>
                 </div>
             </div>
               : null
