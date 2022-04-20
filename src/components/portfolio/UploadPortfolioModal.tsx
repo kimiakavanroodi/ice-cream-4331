@@ -22,15 +22,7 @@ export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}
 
         await ProfileService.createStylistProfile(stylistProfile).then((profile) => {
             if (profile.profile != null) {
-                toast.dark('Uploaded the portfolio!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    });
+                window.location.href = '/dashboard'
             } else {
                 alert("Something went wrong!")
             }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap"
 import { OutfitService } from "../../../../networking/chat/outfits/OutfitService";
-
+import { toast } from "react-toastify"
 
 export const SubmitOutfitModal = ({chat_id, pieces, setPieces}: any) => {
     const [title, setTitle] = React.useState("");
@@ -20,8 +20,15 @@ export const SubmitOutfitModal = ({chat_id, pieces, setPieces}: any) => {
       }
 
       return await OutfitService.createOutfit(chat_id, outfitBody).then((outfit) => {
-        console.log(outfit)
-        alert("Successfully created the outfit!")
+        toast.dark('Successfully created an outfit!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
         handleClose()
       })
 

@@ -28,6 +28,8 @@
 
 .style-seeker-profile-container {
     display: flex;
+    position: absolute;
+    bottom: -60px;
     flex-direction: row;
     padding-top: 30px; 
 }
@@ -193,12 +195,12 @@
 .dashboard-rainbow-card-approve-btn {
     border: 1px solid #53FFFF;
     background: none;
+    align-items: center;
     outline: none;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     padding-left: 10px;
     justify-content: flex-start;
 
@@ -307,6 +309,13 @@
     
 }
 
+.dashboard-section-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+}
+
 .dashboard-rainbow-card-expand-btn {
     top: 10px;
     right: 3px;
@@ -316,8 +325,11 @@
 .dashboard-section-1-gradient-card-row {
     display: flex;
     flex-direction: row;
+    overflow-x: auto;
+    margin-top: -50px;
+    margin-left: 20px;
+    height: 110%;
     max-width: 100%;
-    justify-content: space-evenly;
     align-items: center;
 
 }
@@ -325,6 +337,7 @@
 .dashboard-section-1-gray-backdrop-card {
     padding-top: 25px;
     width: 980px;
+    position: relative;
     height: 330px;
 
     background: linear-gradient(96.54deg, rgba(82, 86, 90, 0.94) 9.94%, rgba(73, 73, 73, 0.94) 20.38%, rgba(53, 52, 57, 0.94) 35.36%, rgba(33, 32, 34, 0.94) 54.11%, rgba(51, 52, 54, 0.94) 73.33%, rgba(37, 38, 39, 0.94) 78.08%, rgba(21, 23, 24, 0.94) 93.63%);

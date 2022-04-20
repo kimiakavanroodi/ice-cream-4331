@@ -18,7 +18,6 @@ export const OutfitMessage = ({chat_id, cost, role, id, title, price, descriptio
 
     const seeOutfit = async() => {
         return await OutfitService.seeOutfit(chat_id, id).then((outfit) => {
-            console.log(outfit)
             toast.dark('Viewed and paid for outfit!', {
                 position: "top-right",
                 autoClose: 5000,
