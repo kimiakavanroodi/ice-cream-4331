@@ -94,9 +94,15 @@ export const Dashboard = ({...restProps}: any) => {
                                 
                                         <div className="dashboard-rainbow-card-black-banner-container">
 
-                                            { //@ts-ignore: Unreachable code error
-                                            <button onClick={() => submitMatch(match._id)} className="dashboard-rainbow-card-approve-btn"> Approve </button>}
-                                            <button className="dashboard-rainbow-card-decline-btn">  X </button>
+                                            { match.approved? 
+
+                                            <button style={{width: '100%', justifyContent: "center"}} className="dashboard-rainbow-card-approve-btn"> Already Approved </button>
+
+                                            :
+                                            //@ts-ignore: Unreachable code error
+                                            <>
+                                            <button onClick={() => submitMatch(match._id)} className="dashboard-rainbow-card-approve-btn"> Approve </button>
+                                            <button className="dashboard-rainbow-card-decline-btn">  X </button></>}
 
                                         </div>
                                     </div>
