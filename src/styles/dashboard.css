@@ -1,3 +1,4 @@
+
 .bodyText {
     font-style: normal;
     font-weight: 500;
@@ -9,6 +10,37 @@
     letter-spacing: -0.065em;
 
     color: #FFFFFF;
+}
+
+.style-seeker-name {
+    padding-top:10px;
+    padding-left: 7px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: -0.065em;
+
+    color: #FFFFFF;
+}
+
+.style-seeker-profile-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px; 
+}
+
+.style-seeker-img-container {
+    padding: 6px;
+}
+
+.style-seeker-profile-pic {
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    background: linear-gradient(127.83deg, #EE9D54 9.6%, #7A6DFF 44.48%, #E848C9 99.57%);
 }
 
 
@@ -139,6 +171,13 @@
     position: absolute;
     bottom: 0px;
     z-index: 999;
+}
+
+.dashboard-text-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    padding-bottom: 20px;
 }
 
 .dashboard-rainbow-card-black-banner-container {
@@ -283,4 +322,41 @@
 
 }
 
-.dashboard-section-1-gray-backdrop-card {}
+.dashboard-section-1-gray-backdrop-card {
+    padding-top: 25px;
+    width: 980px;
+    height: 330px;
+
+    background: linear-gradient(96.54deg, rgba(82, 86, 90, 0.94) 9.94%, rgba(73, 73, 73, 0.94) 20.38%, rgba(53, 52, 57, 0.94) 35.36%, rgba(33, 32, 34, 0.94) 54.11%, rgba(51, 52, 54, 0.94) 73.33%, rgba(37, 38, 39, 0.94) 78.08%, rgba(21, 23, 24, 0.94) 93.63%);
+    box-shadow: 59px 4px 16px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 48px 92px 67px rgba(0, 0, 0, 0.25), 43px 48px 54px rgba(0, 0, 0, 0.53), inset -4px 4px 3px rgba(0, 0, 0, 0.22);
+    border-radius: 56px;
+    
+}
+
+.calender-icon {
+    width: 40px;
+    height: 40px;
+
+    background: radial-gradient(81.25% 81.25% at 36.25% 18.75%, #FFE2C8 6.3%, #FFC187 29.51%, #FF4491 61.48%, #C370FF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    box-shadow: inset 2px -3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 28px;
+}
+
+.view-all-container {
+    cursor: pointer;
+    padding-top: 70px;
+    padding-left: 890px;
+    flex-direction: right;
+    justify-content: end;
+
+}
+
+.view-all-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.03em;
+
+    color: rgba(255, 255, 255, 0.91);
+}

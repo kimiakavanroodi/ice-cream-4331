@@ -6,6 +6,12 @@ import { ImgGrid } from "../../components/grid/ImgGrid"
 import MoreIcon from "../../assets/dashboard/ellipses.svg"
 import ProfileImg from "../../assets/dashboard/profileimg.svg"
 import CheckCircle from "../../assets/dashboard/check_circle.svg"
+import calender from "../../assets/dashboard/calender.svg"
+import StyleSeekerPic from "../../assets/dashboard/styleseekerimg.svg"
+import GraceImg from "../../assets/dashboard/grace.svg"
+import TeneishaImg from "../../assets/dashboard/teneisha.svg"
+import AdityaImg from "../../assets/dashboard/aditya.svg"
+import AndreImg from "../../assets/dashboard/andre.svg"
 
 
 export const Dashboard = ({...restProps}: any) => {
@@ -20,6 +26,16 @@ export const Dashboard = ({...restProps}: any) => {
             <div className="feed-container">
 
             <div className="dashboard-section-1">
+                <div className="dashboard-text-container">
+                    <div className="bodyText">
+                        All Matches
+                    </div>
+                    {/* <div className="calender-icon">
+                        <img src={calender}/>
+                    </div> */}
+                    
+                </div>
+                
 
                 <div className="dashboard-section-1-gray-backdrop-card">
 
@@ -39,13 +55,26 @@ export const Dashboard = ({...restProps}: any) => {
                                 <button className="dashboard-rainbow-card-decline-btn">  X </button>
 
                             </div>
-
+                            <div className="style-seeker-profile-container">
+                                <div className="style-seeker-profile-pic">
+                                    <div className="style-seeker-img-container">
+                                        <img src={GraceImg} />   
+                                    </div>
+                                </div>
+                                <div className="style-seeker-name">
+                                    Grace John
+                                </div>
                             </div>
+                            
+                            </div>
+                            
                             <div className="dashboard-rainbow-card-expand-btn">
                                 <img src={MoreIcon} />
                             </div>
+                            
 
                         </div>
+                    
 
                     <div className="dashboard-rainbow-card" style={{background: 'radial-gradient(102.73% 86.56% at 9.7% 8.59%, #4ADEF2 5.73%, #3F70EE 43.12%, #A248E8 66.73%, #EC5A7B 97.92%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #FFFFFF'}}>
 
@@ -59,6 +88,16 @@ export const Dashboard = ({...restProps}: any) => {
                                 <button className="dashboard-rainbow-card-approve-btn"> Approve </button>
                                 <button className="dashboard-rainbow-card-decline-btn">  X </button>
 
+                            </div>
+                            <div className="style-seeker-profile-container">
+                                <div className="style-seeker-profile-pic">
+                                    <div className="style-seeker-img-container">
+                                        <img src={StyleSeekerPic} />   
+                                    </div>
+                                </div>
+                                <div className="style-seeker-name">
+                                    Dylan Harper
+                                </div>
                             </div>
 
                         </div>
@@ -83,6 +122,16 @@ export const Dashboard = ({...restProps}: any) => {
                                <button className="dashboard-rainbow-card-decline-btn">  X </button>
 
                             </div>
+                            <div className="style-seeker-profile-container">
+                                <div className="style-seeker-profile-pic">
+                                    <div className="style-seeker-img-container">
+                                        <img src={TeneishaImg} />   
+                                    </div>
+                                </div>
+                                <div className="style-seeker-name">
+                                    Teneisha Smish
+                                </div>
+                            </div>
 
                         </div>
                         <div className="dashboard-rainbow-card-expand-btn">
@@ -104,6 +153,16 @@ export const Dashboard = ({...restProps}: any) => {
                                <button className="dashboard-rainbow-card-approve-btn"> Approve </button>
                                <button className="dashboard-rainbow-card-decline-btn">  X </button>
 
+                            </div>
+                            <div className="style-seeker-profile-container">
+                                <div className="style-seeker-profile-pic">
+                                    <div className="style-seeker-img-container">
+                                         <img src={AdityaImg}/>
+                                    </div>
+                                </div>
+                                <div className="style-seeker-name">
+                                    Aditya Patal
+                                </div>
                             </div>
 
                         </div>
@@ -127,18 +186,36 @@ export const Dashboard = ({...restProps}: any) => {
                                <button className="dashboard-rainbow-card-decline-btn">  X </button>
 
                             </div>
-
+                            <div className="style-seeker-profile-container">
+                                <div className="style-seeker-profile-pic">
+                                    <div className="style-seeker-img-container">
+                                        <img src={AndreImg} />   
+                                    </div>
+                                </div>
+                                <div className="style-seeker-name">
+                                    Andre Hicks
+                                </div>
+                            </div> 
                         </div>
+
                         <div className="dashboard-rainbow-card-expand-btn">
                             <img src={MoreIcon} />
                         </div>
 
 
+
                     </div>
 
                     </div>
+                    <div className="view-all-container">
+                        <div className="view-all-text">
+                            View all
+                        </div>
+                    </div>
+                    
 
                 </div>
+                
 
                 </div>
 
@@ -186,9 +263,13 @@ export const Dashboard = ({...restProps}: any) => {
                     <div className="bodyText"> Your Profile </div>
                     
                     <div className="profile-card-container">
+
                         <div className="profile-card">
+
                             <div className="profile-container">
+
                                 <div className="profile-pic-container">
+
                                     <div className="profile-pic">
                                         <div className="profile-img-container">
                                             <img src={ProfileImg} />   
