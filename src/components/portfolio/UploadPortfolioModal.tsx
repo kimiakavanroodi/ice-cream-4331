@@ -21,7 +21,7 @@ export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}
 
         await ProfileService.createStylistProfile(stylistProfile).then((profile) => {
             if (profile.profile != null) {
-                console.log("Success")
+                alert("Successfully uploaded!")
             } else {
                 alert("Something went wrong!")
             }
