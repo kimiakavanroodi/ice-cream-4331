@@ -28,6 +28,7 @@ export const ChatPage = ({...restProps} : any) => {
     const [loading, isLoading] = React.useState(true)
     const [allItems, setItems] = React.useState([] as unknown)
     const [uid, setUID] = React.useState("")
+    const [role, setRole] = React.useState("")
 
     const getAllChats = async() => {
         await ChatService.getAllChat().then((chatsInfo) => {
@@ -39,6 +40,12 @@ export const ChatPage = ({...restProps} : any) => {
             }
         })
     };
+
+    const getRole = async() => {
+        await ProfileService.getUserRole().then((role: any) => {
+            setRole(role)
+        })
+    }
 
     const getUID = async() => {
         await ProfileService.getUID().then((uid: any) => {
@@ -88,6 +95,7 @@ export const ChatPage = ({...restProps} : any) => {
 
         getAllChats();
         getUID()
+        getRole()
 
     }, [])
 
@@ -97,12 +105,12 @@ export const ChatPage = ({...restProps} : any) => {
             // @ts-ignore: Unreachable code error
           
         socket.on('UPDATE_MESSAGE', (data) => {
-                        // @ts-ignore: Unreachable code error
+                        console.log(data)
             updateChat(data)
         })
 
         socket.on('UPDATE_CALENDAR', (data) => {
-                        // @ts-ignore: Unreachable code error
+                        console.log(data)
             updateChat(data)
         })
 
@@ -117,7 +125,7 @@ export const ChatPage = ({...restProps} : any) => {
           };
 
           
-    }, []);
+    }, [socket]);
 
     console.log(chatId)
    
@@ -231,6 +239,7 @@ export const ChatPage = ({...restProps} : any) => {
                                     
                                         return  <OutfitMessage
                                         uid={uid}
+                                        role={role}
                                         id={item._id}
                                         // @ts-ignore: Unreachable code error
                                        

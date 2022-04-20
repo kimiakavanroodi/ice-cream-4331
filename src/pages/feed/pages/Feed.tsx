@@ -76,6 +76,27 @@ export const Feed = ({...restProps}) => {
 
     }, [])
 
+    React.useEffect(() => {
+
+        const timer = setTimeout(() => {
+
+            return toast.dark('Sent a match request! 🦄 ', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+        }, 4000)
+
+        return () => clearTimeout(timer)
+
+
+    }, [])
+
     
     return (
         <div className="feed-page-background">

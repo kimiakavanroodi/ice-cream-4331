@@ -3,7 +3,7 @@ import Calendar from "../../../../assets/chat/calendar-today.svg";
 import { CalendarService } from "../../../../networking/chat/calendar/CalendarService";
 import { CreateCalendarInvite } from "../../../../networking/types/CalendarTypes";
 import '../../../../styles/chat/components/calendar-popover.css'
-
+import { toast } from "react-toastify"
 
 
 export const CalendarPopover = ({chat_calendars, chat_id, ...restProps}:any) => {
@@ -21,7 +21,15 @@ export const CalendarPopover = ({chat_calendars, chat_id, ...restProps}:any) => 
 
     const submitCalendar = async() => {
         return await CalendarService.createCalendar(chat_id as string, new_calendar).then((calendars) => {
-            alert("Successfully created an invite!")
+            toast.dark('Created a calendar invite', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
             updateCalendar({start_date: '', location: '', end_date: '', title: '', description: ''})
             setOpen(false)
         })

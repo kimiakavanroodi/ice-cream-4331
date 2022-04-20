@@ -15,7 +15,6 @@ export const OutfitMessage = ({chat_id, cost, role, id, title, price, descriptio
 
     }, has_seen)
 
-    console.log(has_seen)
 
     const seeOutfit = async() => {
         return await OutfitService.seeOutfit(chat_id, id).then((outfit) => {
@@ -61,10 +60,15 @@ export const OutfitMessage = ({chat_id, cost, role, id, title, price, descriptio
 
                     <div className="gradient-white-top-card-outfit"></div>
                     {
-                        !has_seen ? 
-                            <button onClick={seeOutfit} className="payment-button"> Pay ${cost} </button>
-                        : <button onClick={() => setShow(true)} className="payment-button"> View Outfit </button>
+                        role != "stylist" ? 
+                        
+                            !has_seen ? 
+                                <button onClick={seeOutfit} className="payment-button"> Pay to see! </button>
+                            : <button onClick={() => setShow(true)} className="payment-button"> View Outfit </button>
+                        
+                        : null
                     }
+                    
                     
                     <div style={{flex: 2, alignItems: "flex-start"}} className="gradient-card-outfit-column">
                         <p className="gradient-card-outfit-h1"> {title} </p>
