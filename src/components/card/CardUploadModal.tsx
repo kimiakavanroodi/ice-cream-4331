@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap"
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { CardService } from "../../networking/card/CardService";
+import { toast } from 'react-toastify';
 
 export type Focused = "name" | "number" | "expiry" | "cvc";
 

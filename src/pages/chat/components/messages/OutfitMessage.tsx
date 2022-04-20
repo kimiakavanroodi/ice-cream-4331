@@ -1,6 +1,7 @@
 import React from "react";
 import { OutfitService } from "../../../../networking/chat/outfits/OutfitService";
 import { ViewOutfitModal } from "../modals/ViewOutfitModal";
+import { toast } from "react-toastify"
 
 export const OutfitMessage = ({chat_id, cost, role, id, title, price, description, has_seen, pieces, ...restProps}: any) => {
     const [seen, isSeen] = React.useState(has_seen)
@@ -19,7 +20,15 @@ export const OutfitMessage = ({chat_id, cost, role, id, title, price, descriptio
     const seeOutfit = async() => {
         return await OutfitService.seeOutfit(chat_id, id).then((outfit) => {
             console.log(outfit)
-            alert('Viewed outfit!')
+            toast.dark('Viewed and paid for outfit!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
         })
     };
 

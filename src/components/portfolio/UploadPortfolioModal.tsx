@@ -2,6 +2,7 @@ import React from "react"
 import { Modal } from 'react-bootstrap'
 import { ProfileService } from "../../networking/profiles/ProfileService";
 import { ImgGrid } from "../grid/ImgGrid";
+import { toast } from "react-toastify"
 
 
 export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}: any) => {
@@ -21,7 +22,15 @@ export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}
 
         await ProfileService.createStylistProfile(stylistProfile).then((profile) => {
             if (profile.profile != null) {
-                alert("Successfully uploaded!")
+                toast.dark('Uploaded the portfolio!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
             } else {
                 alert("Something went wrong!")
             }
@@ -45,10 +54,6 @@ export const UploadPortfolioModal = ({interests, modal, showModal, ...restProps}
 
     return (
         <>
-        {/* <button className="finish-creating-outfit-btn" onClick={handleShow}>
-            Add your Portfolio
-        </button> */}
-
             <Modal show={modal} onHide={showModal}>
                 
                 <Modal.Body>

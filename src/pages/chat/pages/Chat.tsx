@@ -19,7 +19,7 @@ import { ProfileService } from "../../../networking/profiles/ProfileService";
 import { PostMessageText } from "../components/messages/PostMessageText";
 import { OutfitMessage } from "../components/messages/OutfitMessage";
 
-let socket = io("http://localhost:8080")
+let socket = io("//match-it-systems.uc.r.appspot.com")
 
 export const ChatPage = ({...restProps} : any) => {
     const [outfitModal, isOutfitModal] = React.useState(false)
@@ -59,8 +59,9 @@ export const ChatPage = ({...restProps} : any) => {
         // @ts-ignore: Unreachable code error
         const copiedObject = value
                 // @ts-ignore: Unreachable code error
-        setCurrChat(copiedObject)
         sortChat(copiedObject)
+
+        setCurrChat(copiedObject)
 
     };
 

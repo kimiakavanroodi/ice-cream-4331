@@ -9,6 +9,7 @@ import SkipIcon from "../../../assets/chat/feed/skip-icon.svg"
 import { ProfileService } from "../../../networking/profiles/ProfileService";
 import { BulkStylists, StylistProfile } from "../../../networking/types/ProfileTypes";
 import { MatchService } from "../../../networking/matches/MatchService";
+import { toast } from 'react-toastify';
 
 
 export const Feed = ({...restProps}) => {
@@ -31,6 +32,7 @@ export const Feed = ({...restProps}) => {
             setCurrStylist(stylists[0])
         } else {
             setIndex(index + 1);
+            
             setCurrStylist(stylists[index + 1])
         }
     };
@@ -42,8 +44,16 @@ export const Feed = ({...restProps}) => {
 
         await MatchService.createMatch(matchBody).then((match) => {
             if (match != null) {
-                alert('Sent a match request!')
                 nextStylist();
+                toast.dark('Sent a match request! 🦄 ', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
             } else {
                 alert('Something went wrong.')
             }
@@ -87,7 +97,7 @@ export const Feed = ({...restProps}) => {
 
                             <div className="feed-stylist-profile-description-container">
                                 <FadeIn delay={1000}>
-                                    <p className="feed-stylist-profile-h1"> {currStylist.name} <span style={{fontSize: 12, marginLeft: 3}}> AGE {currStylist.cost} </span> </p>
+                                    <p className="feed-stylist-profile-h1"> {currStylist.name} <span style={{fontSize: 12, marginLeft: 3}}> AGE {currStylist.age} </span> </p>
                                     <p className="feed-stylist-profile-h2"> ${currStylist.cost} per outfit  </p>
                                     <p className="feed-stylist-profile-p"> {
                                         currStylist.description} </p>
@@ -110,7 +120,6 @@ export const Feed = ({...restProps}) => {
                 </div>
                 </div>
             </div>
-
 
         </div>
     )

@@ -5,6 +5,7 @@ import colorLogo from "../assets/login/colorLogo.svg";
 import background from "../assets/login/signupBackground.svg";
 import { ProfileService } from '../networking/profiles/ProfileService';
 import { CardUploadModal } from '../components/card/CardUploadModal';
+import { toast } from 'react-toastify';
 
 export const Login = ({...restProps}) => { 
     const [login, setLogin] = React.useState(true)
@@ -27,6 +28,15 @@ export const Login = ({...restProps}) => {
             if (resp) {
                 await ProfileService.loginFlow(new_user_data.email, new_user_data.password).then(() => {
                     setSteps(steps + 1)
+                    toast.dark('Successfully created an account!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
                 })
             }
         })
